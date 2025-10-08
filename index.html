@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grow Medico - Healthcare Marketing</title>
+  <title>THE SERIOUS PEOPLE - Healthcare Marketing</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <style>
@@ -27,12 +27,13 @@
     /* Navbar with floating effect */
     .navbar {
       position: fixed;
-      top: 20px;
+      top: 50px;
       left: 50%;
       transform: translateX(-50%);
       width: 90%;
       max-width: 1200px;
       background: rgba(10, 10, 10, 0.85);
+      -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
       padding: 1rem 2rem;
       z-index: 1000;
@@ -45,7 +46,7 @@
     }
     
     .navbar.scrolled {
-      top: 10px;
+      top: 45px;
       background: rgba(10, 10, 10, 0.95);
       box-shadow: 0 10px 40px rgba(59, 130, 246, 0.2);
     }
@@ -84,15 +85,17 @@
     /* Hero with split layout */
     .hero {
       min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 4rem;
+      text-align: center;
       padding: 140px 5% 80px;
-      background: radial-gradient(ellipse at top left, #1e3a8a 0%, #0a0a0a 50%);
+      background: radial-gradient(ellipse at top center, #1e3a8a 0%, #0a0a0a 50%);
       position: relative;
       overflow: hidden;
     }
+    
     
     .hero::before {
       content: '';
@@ -105,7 +108,43 @@
       left: -200px;
       animation: float 10s ease-in-out infinite;
     }
+    .alert-bar {
+      background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+      color: white;
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
 
+  .alert-bar span {
+      animation: pulse 2s ease-in-out infinite;
+  }
+
+    .cta-button {
+      background: #fbbf24;
+      color: #1a1a1a;
+      padding: 20px 48px;
+      font-size: 20px;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(251, 191, 36, 0.4);
+      display: inline-block;
+      text-decoration: none;
+  }
+
+  .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(251, 191, 36, 0.5);
+      background: #f59e0b;
+  }
     .hero::after {
       content: '';
       position: absolute;
@@ -117,6 +156,7 @@
       right: -100px;
       animation: float 8s ease-in-out infinite reverse;
     }
+    
     
     @keyframes float {
       0%, 100% { transform: translate(0, 0) scale(1); }
@@ -138,6 +178,7 @@
 
     .stat-card {
       background: rgba(30, 58, 138, 0.3);
+      -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(59, 130, 246, 0.3);
       border-radius: 20px;
@@ -259,6 +300,23 @@
       flex-direction: column;
       gap: 1rem;
     }
+    .cta-section {
+      background: linear-gradient(180deg, #1e3a8a 0%, #000c19 100%);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+  }
+
+  .cta-section h2 {
+      font-size: 48px;
+      margin-bottom: 24px;
+  }
+
+  .cta-section p {
+      font-size: 22px;
+      margin-bottom: 40px;
+      opacity: 0.9;
+  }
 
     .feature-item {
       display: flex;
@@ -819,6 +877,322 @@
       font-size: 0.9rem;
     }
 
+
+    .section {
+      padding: 80px 20px;
+      background: #0a0a0a;
+      
+  }
+
+  .section-dark {
+    background: linear-gradient(180deg, #1e3a8a 0%, #0a0a0a 100%);
+  }
+
+  .section-title {
+      font-size: 42px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 16px;
+      color: #ffffff;
+  }
+
+  .section-subtitle {
+      font-size: 20px;
+      text-align: center;
+      color: #f4f7fd;
+      margin-bottom: 60px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    padding: 1.5rem;
+    background: rgba(30, 58, 138, 0.2);
+    border-radius: 15px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.problem-card {
+    background: white;
+    padding: 32px;
+    color: #0a0a0a;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-left: 4px solid #1350d4;
+    transition: transform 0.3s ease;
+}
+
+.problem-card:hover {
+    transform: translateY(-4px);
+}
+
+.problem-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.problem-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+}
+
+.process-section {
+  padding: 80px 20px;
+  background: #1a1a1a;
+}
+
+.process-steps {
+  max-width: 900px;
+  margin: 48px auto 0;
+}
+
+.process-step {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 48px;
+  align-items: flex-start;
+}
+
+.step-number {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #1e40af 0%, #7e22ce 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 800;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(30, 64, 175, 0.3);
+}
+
+.step-content {
+  flex: 1;
+  padding-top: 8px;
+}
+
+.step-content h3 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+
+.step-content p {
+  font-size: 18px;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+  /* Checklist Section - Interactive Items */
+
+    .checklist-section {
+      background: linear-gradient(180deg, #1e3a8a 0%, #0a0a0a 100%);
+      color: white;
+      padding: 80px 20px;
+  }
+
+  .checklist-container {
+      max-width: 800px;
+      margin: 0 auto;
+  }
+
+  .checklist-intro {
+      text-align: center;
+      margin-bottom: 48px;
+  }
+
+  .checklist-intro h2 {
+      font-size: 38px;
+      margin-bottom: 16px;
+  }
+
+  .checklist-item {
+      background: rgba(255,255,255,0.1);
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.3s ease;
+  }
+
+  .checklist-item:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateX(8px);
+  }
+
+  .checkbox {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: #1032b9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+  }
+
+  .checkbox::after {
+      content: '✓';
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+  }
+
+  .checklist-content h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #fbbf24;
+  }
+  /* Results Section - Card Layout */
+
+
+    .results-section {
+      padding: 80px 20px;
+      background: linear-gradient(180deg, #112869 0%, #0a0a0a 100%);
+  }
+
+  .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+  }
+
+  .result-card {
+    padding: 8rem 1rem;
+    background: linear-gradient(180deg, #1e3a8a 0%, #0a0a0a 100%);
+      border-radius: 16px;
+      border: 2px solid #ffffff;
+      
+      position: relative;
+      overflow: hidden;
+  }
+
+  .result-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 120px;
+      color: rgba(59, 130, 246, 0.1);
+      font-family: Georgia, serif;
+  }
+
+  .result-card .name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #f8f9fc;
+      margin-bottom: 8px;
+  }
+
+  .result-card .specialty {
+      color: #f1f3f6;
+      margin-bottom: 20px;
+      font-size: 14px;
+  }
+
+  .result-stat {
+      background: white;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      font-weight: 600;
+      color: #1a1a1a;
+      border-left: 3px solid #10b981;
+  }
+
+  .timeline {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 2px solid #3b82f6;
+      color: #fafafb;
+      font-weight: 600;
+  }
+
+  .urgency-box {
+      background: linear-gradient(135deg, #c31c1c 0%, #8c0e0e 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      margin: 80px 0;
+  }
+
+  .urgency-box h2 {
+      font-size: 48px;
+      margin-bottom: 24px;
+  }
+
+  .urgency-box .spots {
+      font-size: 72px;
+      font-weight: 800;
+      margin: 32px 0;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+
+  .process-section {
+      padding: 80px 20px;
+      background: #000000;
+  }
+
+  .process-steps {
+      max-width: 900px;
+      margin: 48px auto 0;
+  }
+
+  .process-step {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 48px;
+      align-items: flex-start;
+  }
+
+  .step-number {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #1e40af 0%, #7e22ce 100%);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 800;
+      flex-shrink: 0;
+      box-shadow: 0 8px 24px rgba(30, 64, 175, 0.3);
+  }
+
+  .step-content {
+      flex: 1;
+      padding-top: 8px;
+  }
+
+  .step-content h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+      color: #f4eeee;
+  }
+
+  .step-content p {
+      font-size: 18px;
+      color: #6b7280;
+      line-height: 1.7;
+  }
+
+
     /* Responsive */
     @media(max-width: 1200px) {
       .hero {
@@ -922,37 +1296,32 @@
 <body>
   <!-- Floating Navbar -->
   <nav class="navbar">
-    <div class="logo">GROW <span>MEDICO</span></div>
-    <a href="tel:+919999999999" class="btn-call">📞 Schedule Call</a>
+    <div class="logo">THE <span>SERIOUS</span> PEOPLE</div>
+    <a href="#booking" class="btn-call">📞 Schedule Call</a>
   </nav>
+  <div class="alert-bar">
+    <span>🔴 ONLY 3 SPOTS LEFT FOR OCTOBER 2025 | Book Your Call Before They're Gone</span>
+</div>
+
 
   <!-- Hero Split Layout -->
-  <header class="hero">
-    
-    <div class="hero-right">
-      <div class="stat-card">
-        <div class="stat-number">300+</div>
-        <div class="stat-label">Healthcare Clients Served</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">10X</div>
-        <div class="stat-label">Average ROI Delivered</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">90</div>
-        <div class="stat-label">Days to Celebrity Status</div>
-      </div>
-    </div>
-    <div class="hero-left">
-      <h1>
-        Your <span class="highlight">Medical Expertise</span> Deserves 
-        <span class="highlight">a Brand</span> <span>That</span>
-        <span class="highlight">Matches</span> It
-      </h1>
-      <p>Why are less qualified doctors getting more patients than you? Transform from invisible expert to recognized authority in 90 days.</p>
-      <a href="#" class="btn-primary">Get Your Free Strategy Session →</a>
-    </div>
-  </header>
+  <!-- <div class="alert-bar">
+    <span>🔴 ONLY 3 SPOTS LEFT FOR OCTOBER 2025 | Book Your Call Before They're Gone</span>
+</div> -->
+
+
+<section class="hero">
+<div class="hero-content">
+  <h1>
+    Your <span class="highlight">Medical Expertise</span> Deserves 
+    <span class="highlight">a Brand</span> <span>That</span>
+    <span class="highlight">Matches</span> It
+  </h1>
+  <p>Why are less qualified doctors getting more patients than you? Transform from invisible expert to recognized authority in 90 days.</p>
+  <a href="#booking" class="cta-button">Get Your Free Strategy Session →</a>
+    <div class="trust-badge">✓ No pressure. No sales pitch. Just strategic clarity worth thousands.</div>
+</div>
+</section>
 
   <!-- Video Section with Diagonal -->
   <section class="video-section">
@@ -971,7 +1340,7 @@
           </div>
           <div class="feature-item">
             <div class="feature-icon">✓</div>
-            <span>90-day transformation guaranteed</span>
+            <span>transformation guaranteed</span>
           </div>
         </div>
       </div>
@@ -1013,7 +1382,7 @@
   </section>
 
   <!-- Specialties Horizontal Scroll -->
-  <section class="specialties">
+  <!-- <section class="specialties">
     <h2>Built Exclusively For Healthcare Leaders</h2>
     <p class="specialties-subtitle">We only work with serious healthcare entrepreneurs ready to scale</p>
     <div class="specialties-scroll">
@@ -1050,7 +1419,7 @@
         <p>Attract premium clients and establish yourself as the surgeon of choice for aesthetic procedures.</p>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- About Two Column -->
   <section class="about">
@@ -1058,7 +1427,7 @@
       <div class="about-image"></div>
       <div class="about-text">
         <h2>We're Not Just Marketers, We're Growth Partners</h2>
-        <p>At Grow Medico, we live and breathe healthcare marketing. While others treat your practice as just another client, we become an extension of your team, obsessing over your growth like it's our own.</p>
+        <p>At TSP, we live and breathe healthcare marketing. While others treat your practice as just another client, we become an extension of your team, obsessing over your growth like it's our own.</p>
         <p>Started by two passionate entrepreneurs with nothing but laptops and ambition, we've scaled to a 20-person team with offices across India, serving healthcare leaders globally.</p>
         <p>Our secret? We only do one thing—healthcare marketing—and we do it better than anyone else. Every campaign, every strategy, every piece of content is crafted specifically for the healthcare industry.</p>
         <div class="about-stats">
@@ -1078,6 +1447,177 @@
       </div>
     </div>
   </section>
+
+
+  <section class="checklist-section">
+    <div class="checklist-container">
+        <div class="checklist-intro">
+            <h2>Are You Experiencing These Warning Signs?</h2>
+            <p style="font-size: 18px; opacity: 0.9;">Check how many apply to your current situation</p>
+        </div>
+
+        <div class="checklist-item">
+            <div class="checkbox"></div>
+            <div class="checklist-content">
+                <h3>Patients Don't Find You Online</h3>
+                <p>When potential patients search for your specialty, they find your competitors first. Your website is buried on page 3 of Google or barely exists.</p>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <div class="checkbox"></div>
+            <div class="checklist-content">
+                <h3>You're Competing on Price</h3>
+                <p>Without a strong brand, you can't command premium fees. You're forced to match competitors' pricing despite having superior expertise.</p>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <div class="checkbox"></div>
+            <div class="checklist-content">
+                <h3>Less Experienced Doctors Are Ahead</h3>
+                <p>Colleagues with half your experience are getting more recognition, better opportunities, and building larger practices.</p>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <div class="checkbox"></div>
+            <div class="checklist-content">
+                <h3>Your Calendar Isn't Full</h3>
+                <p>You have availability but struggle to fill your schedule with the quality patients you want to serve.</p>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <div class="checkbox"></div>
+            <div class="checklist-content">
+                <h3>No Media or Speaking Requests</h3>
+                <p>You're never contacted for expert commentary, speaking opportunities, or to contribute to publications in your field.</p>
+            </div>
+        </div>
+
+        <div class="checklist-item">
+            <div class="checkbox"></div>
+            <div class="checklist-content">
+                <h3>Generic Online Presence</h3>
+                <p>Your website and profiles look like everyone else's—nothing differentiates you or communicates your unique expertise.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+            <p style="font-size: 20px; margin-bottom: 24px;">If you checked 3 or more, you're losing patients and revenue every single day.</p>
+            <a href="#booking" class="cta-button">Let's Fix This—Book Your Call</a>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+      <h2 class="section-title">The Hidden Cost of Being "Just Another Doctor"</h2>
+      <p class="section-subtitle">Every day you delay building your brand, you're losing opportunities that go to doctors with better brand positioning & visibility online.</p>
+      
+      <!-- <div class="problem-grid">
+          <div class="problem-card">
+              <div class="problem-icon">💰</div>
+              <h3>High-Value Patients</h3>
+              <p>Premium patients who would pay top fees for your expertise are booking with competitors who simply look more established online.</p>
+          </div>
+          <div class="problem-card">
+              <div class="problem-icon">🎤</div>
+              <h3>Speaking Opportunities</h3>
+              <p>Media outlets and conferences are seeking experts—but they can't find you because your online presence doesn't reflect your authority.</p>
+          </div>
+          <div class="problem-card">
+              <div class="problem-icon">🤝</div>
+              <h3>Strategic Partnerships</h3>
+              <p>Top-tier medical institutions partner with doctors who have strong professional brands and market presence.</p>
+          </div>
+          <div class="problem-card">
+              <div class="problem-icon">📰</div>
+              <h3>Media Recognition</h3>
+              <p>Being featured in publications could 10x your credibility overnight—but journalists need to see you as a recognized authority first.</p>
+          </div>
+      </div> -->
+  </div>
+</section>
+
+  <section class="results-section">
+    <div class="container">
+        <h2 class="section-title">Real Doctors, Real Transformations</h2>
+        <p class="section-subtitle">These physicians were in your exact position. Here's what happened when they took action.</p>
+        
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="name">Dr. Sarah Chen</div>
+                <div class="specialty">Dermatologist, Los Angeles</div>
+                <div class="result-stat">📈 14 → 89 new patients per month</div>
+                <div class="result-stat">💰 Average transaction value +340%</div>
+                <div class="result-stat">📰 Featured in 3 major health publications</div>
+                <div class="timeline">⏱ Timeline: 90 days</div>
+            </div>
+
+            <div class="result-card">
+                <div class="name">Dr. Michael Rodriguez</div>
+                <div class="specialty">Orthopedic Surgeon, Dallas</div>
+                <div class="result-stat">🤝 Secured hospital partnership worth $2.1M</div>
+                <div class="result-stat">📅 Now booked 16 weeks in advance</div>
+                <div class="result-stat">🎯 Became the go-to surgeon in specialty</div>
+                <div class="timeline">⏱ Timeline: 5 months</div>
+            </div>
+
+            <div class="result-card">
+                <div class="name">Dr. Jennifer Park</div>
+                <div class="specialty">Functional Medicine, Seattle</div>
+                <div class="result-stat">💎 Launched premium concierge practice</div>
+                <div class="result-stat">💰 Increased rates by 60% (zero pushback)</div>
+                <div class="result-stat">📋 Waitlist of 200+ high-value patients</div>
+                <div class="timeline">⏱ Timeline: 4 months</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="urgency-box">
+  <h2>We Can Only Work With</h2>
+  <div class="spots">3 DOCTORS</div>
+  <p style="font-size: 24px; margin-bottom: 32px;">This quarter. Once these spots are filled, the next opening is January 2026.</p>
+  <a href="#booking" class="cta-button">Claim Your Spot Now</a>
+</div>
+
+<section class="process-section">
+  <div class="container">
+      <h2 class="section-title">Our 3-Phase Authority Positioning System™</h2>
+      <p class="section-subtitle">Total transformation</p>
+
+      <div class="process-steps">
+          <div class="process-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                  <h3>Strategic Foundation</h3>
+                  <p><strong></strong> We audit your current positioning, identify your unique authority angle, and craft a brand story that makes patients think, "This is exactly who I need."</p>
+              </div>
+          </div>
+
+          <div class="process-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                  <h3>Authority Assets</h3>
+                  <p><strong></strong> We build your professional brand presence: website, content strategy, media kit, and positioning materials that scream expertise.</p>
+              </div>
+          </div>
+
+          <div class="process-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                  <h3>Visibility & Momentum</h3>
+                  <p><strong></strong> We deploy targeted strategies to get you in front of your ideal patients—both online and offline—and establish you as the go-to expert.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
 
   <!-- Challenges Masonry -->
   <section class="challenges">
@@ -1124,8 +1664,17 @@
     </div>
   </section>
 
+  <section class="cta-section" id="booking">
+    <div class="container">
+        <h2>Ready to Stop Being Invisible?</h2>
+        <p>Book your 30-minute Brand Clarity Call where we'll analyze your positioning, identify your authority angle, and map your growth plan.</p>
+        <a href="#booking" class="cta-button" style="background: white; color: #1e40af;">Schedule Your Free Call</a>
+        <div style="margin-top: 24px; font-size: 14px; opacity: 0.9;">⚡ Only 3 spots remaining for October 2025</div>
+    </div>
+</section>
+
   <!-- Testimonials Grid -->
-  <section class="testimonials">
+  <!-- <section class="testimonials">
     <div class="container">
       <h2>Real Doctors. Real Results. Real Growth.</h2>
       <div class="testimonials-track">
@@ -1143,7 +1692,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- FAQ Accordion -->
   <section class="faq">
@@ -1152,56 +1701,38 @@
       <div class="faq-container">
         <div class="faq-item">
           <div class="faq-question">
-            <span>What makes your agency different from other marketing agencies?</span>
+            <span>"I'm too busy to focus on branding right now."</span>
             <div class="faq-icon">+</div>
           </div>
           <div class="faq-answer">
-            <p>We exclusively serve healthcare professionals, which means every strategy, campaign, and piece of content is battle-tested in the medical field. We don't waste your time running generic ads—we build complete marketing systems designed to establish you as the authority in your specialty and generate predictable patient flow.</p>
+            <p>That's exactly why you need this. Our system is built for busy physicians. You won't be creating content or managing campaigns—we handle everything. Most clients spend less than 2 hours total during the 90-day process.</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-question">
-            <span>What kind of ROI can I realistically expect?</span>
+            <span> "I'm not comfortable with 'marketing' as a doctor."</span>
             <div class="faq-icon">+</div>
           </div>
           <div class="faq-answer">
-            <p>Our clients typically see a 3-10X return on their marketing investment within the first 45 days. This isn't luck—it's the result of implementing proven strategies duplicated from our most successful campaigns. You're getting winning formulas from day one, not experimental tactics.</p>
+            <p>Neither are we. What we do is professional positioning—ethical, compliant, and focused on showcasing your genuine expertise. We work within all medical board regulations and HIPAA requirements.</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-question">
-            <span>Can you help improve my case acceptance rates?</span>
+            <span>"How is this different from other marketing agencies?"</span>
             <div class="faq-icon">+</div>
           </div>
           <div class="faq-answer">
-            <p>Absolutely. Attracting high-ticket patients is only half the battle. We provide coaching to help you convert consultations into accepted cases, and we're developing a comprehensive video training series on this exact topic. Plus, our marketing pre-educates patients about your value before they even walk through your door.</p>
+            <p>We exclusively work with doctors. We understand medical ethics, board regulations, and patient psychology. Unlike generic agencies, we've spent 4 years perfecting physician branding specifically. 92% of our clients see measurable results.</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-question">
-            <span>Will your team handle lead follow-up calls?</span>
+            <span>"What if my specialty is too niche?"</span>
             <div class="faq-icon">+</div>
           </div>
           <div class="faq-answer">
-            <p>Yes, we have a dedicated team that can manage initial lead calls. However, if you prefer your staff to handle this, we'll train them on our proven follow-up methodology. Additionally, our automated systems nurture leads 24/7, dramatically increasing your close rate before anyone picks up the phone.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Can I pick and choose individual services?</span>
-            <div class="faq-icon">+</div>
-          </div>
-          <div class="faq-answer">
-            <p>We don't offer à la carte services because fragmented marketing doesn't work. Our 90-day system integrates Facebook, Instagram, Google My Business, and Google Ads into a cohesive strategy that establishes you as the undisputed authority in your city. Cherry-picking services would compromise the results we guarantee.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Do you sell courses or mentorship programs?</span>
-            <div class="faq-icon">+</div>
-          </div>
-          <div class="faq-answer">
-            <p>No. We're a done-for-you agency, not educators. Your time is too valuable to spend learning marketing when you should be treating patients. When you need a car, you buy one—you don't take a course on building cars. We handle everything so you can focus on what you do best: practicing medicine.</p>
+            <p>Perfect. Niche specialties are actually easier to brand because there's less competition and higher demand for recognized experts. Some of our best success stories come from highly specialized fields.</p>
           </div>
         </div>
       </div>
@@ -1212,9 +1743,9 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-brand">
-        <h3>GROW <span style="color: #3b82f6;">MEDICO</span></h3>
+        <h3>THE<span style="color: #3b82f6;">SERIOUS</span>PEOPLE</h3>
         <p>Transforming healthcare practices into patient magnets through proven marketing systems and authentic authority building.</p>
-        <a href="#" class="btn-primary">Start Your Transformation →</a>
+        <a href="#" class="cta-button">Start Your Transformation →</a>
       </div>
       <div class="footer-section">
         <h4>Quick Links</h4>
@@ -1235,7 +1766,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Copyright © 2024 Grow Medico. This site is not affiliated with or endorsed by Facebook Inc. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
+      <p>Copyright © 2024 TSP. This site is not affiliated with or endorsed by Facebook Inc. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
     </div>
   </footer>
 
