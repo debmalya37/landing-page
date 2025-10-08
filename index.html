@@ -31,6 +31,7 @@
       left: 0;
       width: 100%;
       background: rgba(10, 10, 10, 0.95);
+      -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
       padding: 1.2rem 0;
       z-index: 1000;
@@ -482,7 +483,7 @@
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      gap: 1rem;
     }
     
     .testimonial-card {
@@ -603,6 +604,26 @@
       transform: translateX(5px);
     }
 
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, margin-top 0.4s ease, opacity 0.4s ease;
+      opacity: 0;
+      color: #94a3b8;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+    
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      margin-top: 1rem;
+      opacity: 1;
+    }
+    
+    .faq-item.active .faq-arrow {
+      transform: rotate(90deg);
+    }
+
     /* Responsive */
     @media(max-width: 768px) {
       .hero h1 { font-size: 2rem; }
@@ -632,9 +653,9 @@
   <header class="hero">
     <div class="hero-content">
       <h1>
-        Your <span class="highlight">Medical Expertise</span>, Deserves 
+        Your <span class="highlight">Medical Expertise</span> Deserves 
         <span class="highlight">a Brand</span> <span>That</span>
-        <span class="highlight">Matches</span>It
+        <span class="highlight">Matches</span> It
       </h1>
       <p>Why are less qualified doctors getting more patients than you? Transform from invisible expert to recognized authority in 90 days.</p>
       <a href="#" class="btn-primary">Book Free Strategy Call Now</a>
@@ -775,11 +796,17 @@
             <span>How is your agency different from other marketing agencies?</span>
             <span class="faq-arrow">▶</span>
           </div>
+          <div class="faq-answer">
+            At our marketing agency, we set ourselves apart by only working with clients in the healthcare sector. We believe that this focus allows us to provide our clients with the best results possible. Additionally, we don't believe in simply running social media and Google ads to generate leads. Instead, we focus on building a marketing system that will generate sales. By only working with a limited number of clients, we are able to maintain a focus on quality over quantity.
+          </div>
         </div>
         <div class="faq-item">
           <div class="faq-question">
             <span>How much of an ROI can I expect?</span>
             <span class="faq-arrow">▶</span>
+          </div>
+          <div class="faq-answer">
+            Our marketing system is designed to produce a 3-10X return on investment for our clients. This means that you can expect to see a significant return on your ad spending within the first 45 days. Remember, our marketing systems and strategies are duplicated from our clients' successful campaigns. This ensures that you will only be given winning ideas from day one.
           </div>
         </div>
         <div class="faq-item">
@@ -787,11 +814,17 @@
             <span>Can you guys also help in Case Acceptance?</span>
             <span class="faq-arrow">▶</span>
           </div>
+          <div class="faq-answer">
+            If you're struggling to increase "case acceptance", we can help. Sales are essential for every practice, and marketing can create opportunities for high-ticket patients. However, if you're not able to close the deal, it's pointless. We offer to coach you to help you increase case acceptance. We're also in the process of creating a video series on this topic.
+          </div>
         </div>
         <div class="faq-item">
           <div class="faq-question">
             <span>Will you call the leads as well?</span>
             <span class="faq-arrow">▶</span>
+          </div>
+          <div class="faq-answer">
+            Yes, we do have a team of experts who make calls to leads from our end, but if you want your staff to handle that task, we will teach them how to follow up with leads in the most effective way possible. Additionally, using our automated follow-up systems will increase the likelihood of you closing phone calls.
           </div>
         </div>
         <div class="faq-item">
@@ -799,11 +832,17 @@
             <span>Do you offer services that can be chosen individually?</span>
             <span class="faq-arrow">▶</span>
           </div>
+          <div class="faq-answer">
+            At the moment, we do not offer services that can be chosen individually because we want to maintain the quality of results that we deliver to clients. We understand that some clients might request this, but they may not fully understand how marketing channels work together. Our flagship 90 day marketing system is the only service that we offer at the moment. In just three months, we will use Facebook, Instagram, GMB, and Google Ads to make you the authority in your city.
+          </div>
         </div>
         <div class="faq-item">
           <div class="faq-question">
             <span>Do you guys Sell Courses or Mentorship?</span>
             <span class="faq-arrow">▶</span>
+          </div>
+          <div class="faq-answer">
+            No, we don't sell courses or mentorship because we believe that our clients should be results-oriented and not have to invest their time in something that we can do for them. Just like if you wanted to buy a car, you would go to a dealership and purchase it – you wouldn't buy a course on how to build a car. Time is precious and we want to save our clients time by doing the work for them so they can get back to living their life!
           </div>
         </div>
       </div>
@@ -951,6 +990,21 @@
             clearProps: 'all'
           });
         }
+
+        // FAQ Toggle Functionality
+        faqItems.forEach(item => {
+          const question = item.querySelector('.faq-question');
+          question.addEventListener('click', () => {
+            // Close all other FAQ items
+            faqItems.forEach(otherItem => {
+              if (otherItem !== item && otherItem.classList.contains('active')) {
+                otherItem.classList.remove('active');
+              }
+            });
+            // Toggle current item
+            item.classList.toggle('active');
+          });
+        });
       }, 100); // Small delay to ensure everything is rendered
     });
   </script>
