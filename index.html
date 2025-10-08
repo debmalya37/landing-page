@@ -19,49 +19,46 @@
     a { text-decoration: none; }
     
     .container {
-      width: 90%;
-      max-width: 1200px;
+      width: 100%;
+      max-width: 1400px;
       margin: 0 auto;
     }
 
-    /* Navbar */
+    /* Navbar with floating effect */
     .navbar {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(10, 10, 10, 0.95);
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-      padding: 1.2rem 0;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(59, 130, 246, 0.1);
-      transition: all 0.3s ease;
-    }
-    
-    .navbar.scrolled {
-      background: rgba(10, 10, 10, 0.98);
-      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
-    }
-    
-    .nav-container {
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       width: 90%;
       max-width: 1200px;
-      margin: auto;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(20px);
+      padding: 1rem 2rem;
+      z-index: 1000;
+      border-radius: 50px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      transition: all 0.4s ease;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     
+    .navbar.scrolled {
+      top: 10px;
+      background: rgba(10, 10, 10, 0.95);
+      box-shadow: 0 10px 40px rgba(59, 130, 246, 0.2);
+    }
+    
     .logo {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 800;
       color: #fff;
       letter-spacing: 1px;
     }
     
     .logo span {
-      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -69,31 +66,30 @@
     
     .btn-call {
       background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-      padding: 0.8rem 1.8rem;
+      padding: 0.8rem 2rem;
       border-radius: 50px;
       color: #fff;
       font-weight: 600;
-      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
       transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+      border: 2px solid transparent;
     }
     
     .btn-call:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(59, 130, 246, 0.5);
+      box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6);
+      border-color: rgba(255, 255, 255, 0.2);
     }
 
-    /* Hero */
+    /* Hero with split layout */
     .hero {
       min-height: 100vh;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 20px 60px;
-      background: radial-gradient(ellipse at top, #1e3a8a 0%, #0a0a0a 50%);
+      gap: 4rem;
+      padding: 140px 5% 80px;
+      background: radial-gradient(ellipse at top left, #1e3a8a 0%, #0a0a0a 50%);
       position: relative;
       overflow: hidden;
     }
@@ -101,31 +97,80 @@
     .hero::before {
       content: '';
       position: absolute;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.15), transparent);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent);
       border-radius: 50%;
-      top: -250px;
-      right: -250px;
-      animation: pulse 8s ease-in-out infinite;
+      top: -200px;
+      left: -200px;
+      animation: float 10s ease-in-out infinite;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(96, 165, 250, 0.15), transparent);
+      border-radius: 50%;
+      bottom: -100px;
+      right: -100px;
+      animation: float 8s ease-in-out infinite reverse;
     }
     
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.1); opacity: 0.8; }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -30px) scale(1.1); }
     }
     
-    .hero-content {
+    .hero-left {
       position: relative;
       z-index: 1;
-      max-width: 900px;
+    }
+    
+    .hero-right {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .stat-card {
+      background: rgba(30, 58, 138, 0.3);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateX(-10px);
+      border-color: #3b82f6;
+      box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      margin-top: 0.5rem;
     }
     
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 3.8rem;
       font-weight: 800;
       margin-bottom: 1.5rem;
-      line-height: 1.2;
+      line-height: 1.1;
     }
     
     .hero .highlight {
@@ -133,14 +178,13 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      position: relative;
     }
     
     .hero p {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       margin-bottom: 2.5rem;
       color: #94a3b8;
-      font-weight: 300;
+      line-height: 1.6;
     }
     
     .btn-primary {
@@ -148,701 +192,1016 @@
       color: #fff;
       font-weight: 700;
       font-size: 1.1rem;
-      padding: 1rem 2.5rem;
+      padding: 1.2rem 3rem;
       border-radius: 50px;
       display: inline-block;
       box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
       transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      opacity: 1;
-      visibility: visible;
-      position: relative;
-      z-index: 10;
-    }
-    
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(59, 130, 246, 0.6);
-    }
-
-    /* Video Section */
-    .video-section {
-      background: linear-gradient(180deg, #1e40af 0%, #1e3a8a 100%);
-      padding: 5rem 1rem;
-      text-align: center;
-      position: relative;
-    }
-    
-    .video-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-      opacity: 0.5;
-    }
-    
-    .video-wrapper {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto 2rem;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    }
-    
-    .video-section iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-    }
-    
-    .btn-secondary {
-      margin-top: 1.5rem;
-      display: inline-block;
-      background: #fff;
-      color: #1e40af;
-      font-weight: 700;
-      font-size: 1.1rem;
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
-    }
-    
-    .btn-secondary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3);
-    }
-
-    /* Discover Section */
-    .discover {
-      padding: 6rem 1rem;
-      background: #0a0a0a;
-      text-align: center;
-    }
-    
-    .discover h2 {
-      font-size: 2.5rem;
-      margin-bottom: 3rem;
-      font-weight: 700;
-    }
-    
-    .discover-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-      margin-bottom: 3rem;
-    }
-    
-    .card {
-      background: linear-gradient(145deg, #1a1a2e, #16162a);
-      padding: 2.5rem;
-      border: 1px solid rgba(59, 130, 246, 0.2);
-      border-radius: 20px;
-      transition: all 0.3s ease;
+      border: 2px solid transparent;
       position: relative;
       overflow: hidden;
     }
-    
-    .card::before {
+
+    .btn-primary::before {
       content: '';
       position: absolute;
       top: 0;
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
       transition: left 0.5s ease;
     }
-    
-    .card:hover::before {
+
+    .btn-primary:hover::before {
       left: 100%;
     }
     
-    .card:hover {
-      transform: translateY(-10px);
-      border-color: #3b82f6;
-      box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(59, 130, 246, 0.6);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Video Section - Diagonal Split */
+    .video-section {
+      background: linear-gradient(135deg, #1e40af 0%, #0a0a0a 100%);
+      padding: 8rem 1rem;
+      position: relative;
+      clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+      margin: -5rem 0;
     }
     
-    .card-icon {
+    .video-content {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .video-info h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .video-info p {
+      font-size: 1.2rem;
+      color: #94a3b8;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .video-features {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .feature-item:hover {
+      background: rgba(59, 130, 246, 0.1);
+      transform: translateX(10px);
+    }
+
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    
+    .video-wrapper {
+      position: relative;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      transform: perspective(1000px) rotateY(-5deg);
+      transition: all 0.3s ease;
+    }
+
+    .video-wrapper:hover {
+      transform: perspective(1000px) rotateY(0deg);
+      box-shadow: 0 40px 100px rgba(59, 130, 246, 0.4);
+    }
+    
+    .video-section iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+
+    /* Services - Bento Grid Layout */
+    .services {
+      padding: 8rem 1rem;
+      background: #0a0a0a;
+    }
+    
+    .services h2 {
       font-size: 3rem;
       margin-bottom: 1rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .services-subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #94a3b8;
+      margin-bottom: 4rem;
     }
     
-    .card h3 {
-      font-size: 1.3rem;
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 300px);
+      gap: 1.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .bento-item {
+      background: linear-gradient(145deg, #1a1a2e, #16162a);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 25px;
+      padding: 2.5rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .bento-item::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .bento-item:hover::before {
+      opacity: 1;
+    }
+
+    .bento-item:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+
+    .bento-item:nth-child(2) {
+      grid-column: span 2;
+      grid-row: span 1;
+      background: linear-gradient(135deg, #1e40af, #1e3a8a);
+    }
+
+    .bento-item:nth-child(3) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+    .bento-item:nth-child(4) {
+      grid-column: span 2;
+      grid-row: span 1;
+      background: linear-gradient(135deg, #1e40af, #1e3a8a);
+    }
+
+    .bento-item:hover {
+      transform: translateY(-10px);
+      border-color: #3b82f6;
+      box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
+    }
+
+    .bento-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .bento-item h3 {
+      font-size: 1.6rem;
       margin-bottom: 1rem;
-      color: #3b82f6;
+      color: #fff;
     }
-    
-    .card p {
+
+    .bento-item p {
+      color: #94a3b8;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    /* Specialties - Horizontal Scroll */
+    .specialties {
+      padding: 8rem 0;
+      background: linear-gradient(180deg, #0a0a0a 0%, #1e3a8a 50%, #0a0a0a 100%);
+      overflow: hidden;
+    }
+
+    .specialties h2 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .specialties-subtitle {
+      text-align: center;
+      font-size: 1.3rem;
+      color: #94a3b8;
+      margin-bottom: 4rem;
+    }
+
+    .specialties-scroll {
+      display: flex;
+      gap: 2rem;
+      padding: 2rem 5%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: #3b82f6 #1a1a2e;
+    }
+
+    .specialties-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .specialties-scroll::-webkit-scrollbar-track {
+      background: #1a1a2e;
+      border-radius: 10px;
+    }
+
+    .specialties-scroll::-webkit-scrollbar-thumb {
+      background: #3b82f6;
+      border-radius: 10px;
+    }
+
+    .specialty-card {
+      min-width: 320px;
+      background: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(10px);
+      border: 2px solid #3b82f6;
+      border-radius: 25px;
+      padding: 2.5rem;
+      scroll-snap-align: start;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .specialty-card::before {
+      content: '✓';
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 50px;
+      height: 50px;
+      background: #3b82f6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .specialty-card:hover {
+      background: rgba(59, 130, 246, 0.1);
+      transform: scale(1.05);
+      box-shadow: 0 15px 50px rgba(59, 130, 246, 0.4);
+    }
+
+    .specialty-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .specialty-card p {
       color: #94a3b8;
       line-height: 1.6;
     }
 
-    /* Exclusive Section */
-    .exclusive {
-      padding: 6rem 1rem;
-      background: linear-gradient(180deg, #0a0a0a 0%, #1e3a8a 100%);
-      text-align: center;
+    /* About - Two Column with Image */
+    .about {
+      padding: 8rem 1rem;
+      background: #0a0a0a;
     }
-    
-    .exclusive h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .about-image {
+      width: 100%;
+      height: 500px;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
+    }
+
+    .about-image::before {
+      content: '🏥';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 10rem;
+      opacity: 0.2;
+    }
+
+    .about-text h2 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
       font-weight: 700;
     }
-    
-    .exclusive h2 span {
+
+    .about-text p {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .about-stat {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(30, 58, 138, 0.2);
+      border-radius: 15px;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .about-stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
       background: linear-gradient(135deg, #3b82f6, #60a5fa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    
-    .exclusive-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin: 3rem 0;
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .tag {
-      border: 2px solid #3b82f6;
-      padding: 1.8rem;
-      border-radius: 20px;
-      background: rgba(10, 10, 10, 0.8);
-      font-weight: 500;
-      font-size: 1.05rem;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      text-align: left;
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .tag::before {
-      content: '✓';
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: #3b82f6;
-      border-radius: 50%;
-      flex-shrink: 0;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    
-    .tag:hover {
-      background: rgba(59, 130, 246, 0.1);
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
-    }
 
-    /* Who We Are Section */
-    .who-we-are {
-      padding: 6rem 1rem;
-      background: #0a0a0a;
-    }
-    
-    .who-we-are h2 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      font-weight: 700;
-    }
-    
-    .who-content {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-      line-height: 1.8;
+    .about-stat-label {
+      font-size: 0.9rem;
       color: #94a3b8;
-      font-size: 1.1rem;
-    }
-    
-    .who-content p {
-      margin-bottom: 1.5rem;
+      margin-top: 0.5rem;
     }
 
-    /* Clients */
-    .clients {
+    /* Challenges - Masonry Layout */
+    .challenges {
+      padding: 8rem 1rem;
       background: linear-gradient(180deg, #1e3a8a 0%, #0a0a0a 100%);
-      padding: 5rem 1rem;
-      text-align: center;
     }
-    
-    .clients h2 {
-      font-size: 2.5rem;
-      margin-bottom: 3rem;
+
+    .challenges h2 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 4rem;
       font-weight: 700;
     }
-    
-    .client-logos {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .client-logos img {
-      max-height: 80px;
-      filter: grayscale(100%) brightness(0.5);
-      transition: all 0.3s ease;
-    }
-    
-    .client-logos img:hover {
-      filter: grayscale(0%) brightness(1);
-      transform: scale(1.1);
+
+    .masonry-grid {
+      column-count: 3;
+      column-gap: 1.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
-    /* Challenges */
-    .challenges {
-      padding: 6rem 1rem;
+    .challenge-card {
+      background: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      break-inside: avoid;
+      transition: all 0.3s ease;
+    }
+
+    .challenge-card:hover {
+      background: rgba(59, 130, 246, 0.1);
+      border-color: #3b82f6;
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
+    }
+
+    .challenge-card h3 {
+      font-size: 1.3rem;
+      color: #3b82f6;
+      margin-bottom: 0.8rem;
+    }
+
+    .challenge-card p {
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    /* Testimonials - Carousel Style */
+    .testimonials {
+      padding: 8rem 1rem;
       background: #0a0a0a;
       text-align: center;
     }
-    
-    .challenges h2 {
-      font-size: 2.5rem;
-      margin-bottom: 3rem;
+
+    .testimonials h2 {
+      font-size: 3rem;
+      margin-bottom: 4rem;
       font-weight: 700;
-    }
-    
-    .challenge-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .challenge {
-      border: 2px solid #3b82f6;
-      padding: 1.8rem;
-      border-radius: 20px;
-      background: rgba(10, 10, 10, 0.8);
-      font-weight: 500;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      text-align: left;
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .challenge::before {
-      content: '✓';
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: #3b82f6;
-      border-radius: 50%;
-      flex-shrink: 0;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    
-    .challenge:hover {
-      background: rgba(59, 130, 246, 0.1);
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
     }
 
-    /* Testimonials */
-    .testimonials {
-      background: linear-gradient(180deg, #1e3a8a 0%, #0a0a0a 100%);
-      padding: 6rem 1rem;
-      text-align: center;
-    }
-    
-    .testimonials h2 {
-      font-size: 2.5rem;
-      margin-bottom: 3rem;
-      font-weight: 700;
-    }
-    
-    .testimonials-grid {
+    .testimonials-track {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
     }
-    
-    .testimonial-card {
-      border-radius: 20px;
+
+    .testimonial-video {
+      border-radius: 25px;
       overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
       transition: all 0.3s ease;
+      position: relative;
     }
-    
-    .testimonial-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
+
+    .testimonial-video::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 2px solid transparent;
+      border-radius: 25px;
+      transition: border-color 0.3s ease;
+      pointer-events: none;
+      z-index: 1;
     }
-    
-    .testimonials iframe {
+
+    .testimonial-video:hover::before {
+      border-color: #3b82f6;
+    }
+
+    .testimonial-video:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 70px rgba(59, 130, 246, 0.4);
+    }
+
+    .testimonial-video iframe {
       width: 100%;
       height: 250px;
       border: none;
+      display: block;
     }
 
-    /* Footer */
-    .site-footer {
-      padding: 3rem 1rem;
-      background: #0a0a0a;
-      text-align: center;
-      border-top: 1px solid rgba(59, 130, 246, 0.1);
-    }
-    
-    .footer-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .site-footer p {
-      color: #64748b;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      font-size: 0.9rem;
-    }
-    
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
-    .footer-links a {
-      color: #3b82f6;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    
-    .footer-links a:hover {
-      color: #60a5fa;
-    }
-
-    /* FAQ Section */
+    /* FAQ - Accordion Style */
     .faq {
-      padding: 6rem 1rem;
-      background: #0a0a0a;
-      text-align: center;
+      padding: 8rem 1rem;
+      background: linear-gradient(180deg, #1e3a8a 0%, #0a0a0a 100%);
     }
-    
+
     .faq h2 {
-      font-size: 2.5rem;
-      margin-bottom: 3rem;
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 4rem;
       font-weight: 700;
     }
-    
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 1.5rem;
-      max-width: 1200px;
+
+    .faq-container {
+      max-width: 1000px;
       margin: 0 auto;
-      opacity: 1;
-      visibility: visible;
     }
-    
+
     .faq-item {
-      background: rgba(30, 58, 138, 0.1);
+      background: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(10px);
       border: 1px solid rgba(59, 130, 246, 0.2);
-      border-radius: 15px;
-      padding: 2rem;
-      text-align: left;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
       transition: all 0.3s ease;
-      cursor: pointer;
-      position: relative;
-      opacity: 1;
-      visibility: visible;
     }
-    
+
     .faq-item:hover {
-      background: rgba(30, 58, 138, 0.2);
       border-color: #3b82f6;
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
     }
-    
+
     .faq-question {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #fff;
+      padding: 2rem;
+      cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
+      gap: 2rem;
+      font-size: 1.2rem;
+      font-weight: 600;
     }
-    
-    .faq-arrow {
-      color: #3b82f6;
+
+    .faq-icon {
+      width: 40px;
+      height: 40px;
+      background: #3b82f6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1.5rem;
       transition: transform 0.3s ease;
+      flex-shrink: 0;
     }
-    
-    .faq-item:hover .faq-arrow {
-      transform: translateX(5px);
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
     }
 
     .faq-answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease, margin-top 0.4s ease, opacity 0.4s ease;
-      opacity: 0;
-      color: #94a3b8;
-      line-height: 1.7;
-      font-size: 1rem;
+      transition: all 0.4s ease;
+      padding: 0 2rem;
     }
-    
+
     .faq-item.active .faq-answer {
       max-height: 500px;
-      margin-top: 1rem;
-      opacity: 1;
+      padding: 0 2rem 2rem;
     }
-    
-    .faq-item.active .faq-arrow {
-      transform: rotate(90deg);
+
+    .faq-answer p {
+      color: #94a3b8;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    /* Footer - Minimalist */
+    .footer {
+      padding: 4rem 1rem;
+      background: #0a0a0a;
+      border-top: 1px solid rgba(59, 130, 246, 0.2);
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .footer-brand h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+      color: #64748b;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: #3b82f6;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #3b82f6;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(59, 130, 246, 0.1);
+      color: #64748b;
+      font-size: 0.9rem;
     }
 
     /* Responsive */
-    @media(max-width: 768px) {
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1.1rem; }
-      .discover h2, .exclusive h2, .challenges h2, .testimonials h2 { font-size: 1.8rem; }
-      .video-section iframe { height: 300px; }
-      .btn-primary, .btn-secondary { padding: 0.8rem 1.8rem; font-size: 1rem; }
+    @media(max-width: 1200px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 140px 5% 60px;
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .video-content {
+        grid-template-columns: 1fr;
+      }
+
+      .video-wrapper {
+        transform: none;
+      }
+
+      .bento-grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+      }
+
+      .bento-item:nth-child(1),
+      .bento-item:nth-child(2),
+      .bento-item:nth-child(3),
+      .bento-item:nth-child(4) {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      .masonry-grid {
+        column-count: 2;
+      }
+
+      .testimonials-track {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
     }
 
-    @media(max-width: 480px) {
-      .hero h1 { font-size: 1.5rem; }
-      .logo { font-size: 1.3rem; }
-      .btn-call { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
+    @media(max-width: 768px) {
+      .navbar {
+        width: 95%;
+        padding: 0.8rem 1.5rem;
+      }
+
+      .logo {
+        font-size: 1.3rem;
+      }
+
+      .btn-call {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1.1rem; }
+
+      .video-section {
+        clip-path: none;
+        margin: 0;
+      }
+
+      .services h2, .specialties h2, .challenges h2, .testimonials h2, .faq h2 {
+        font-size: 2rem;
+      }
+
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .masonry-grid {
+        column-count: 1;
+      }
+
+      .testimonials-track {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Floating Navbar -->
   <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">GROW <span>MEDICO</span></div>
-      <a href="tel:+919999999999" class="btn-call">📞 Call Now</a>
-    </div>
+    <div class="logo">GROW <span>MEDICO</span></div>
+    <a href="tel:+919999999999" class="btn-call">📞 Schedule Call</a>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero Split Layout -->
   <header class="hero">
-    <div class="hero-content">
+    
+    <div class="hero-right">
+      <div class="stat-card">
+        <div class="stat-number">300+</div>
+        <div class="stat-label">Healthcare Clients Served</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">10X</div>
+        <div class="stat-label">Average ROI Delivered</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">90</div>
+        <div class="stat-label">Days to Celebrity Status</div>
+      </div>
+    </div>
+    <div class="hero-left">
       <h1>
         Your <span class="highlight">Medical Expertise</span> Deserves 
         <span class="highlight">a Brand</span> <span>That</span>
         <span class="highlight">Matches</span> It
       </h1>
       <p>Why are less qualified doctors getting more patients than you? Transform from invisible expert to recognized authority in 90 days.</p>
-      <a href="#" class="btn-primary">Book Free Strategy Call Now</a>
+      <a href="#" class="btn-primary">Get Your Free Strategy Session →</a>
     </div>
   </header>
 
-  <!-- Video Section -->
+  <!-- Video Section with Diagonal -->
   <section class="video-section">
-    <div class="container">
+    <div class="video-content">
+      <div class="video-info">
+        <h2>See How We Transform Healthcare Practices</h2>
+        <p>Watch real doctors share their journey from struggling to attract patients to becoming the go-to authority in their field.</p>
+        <div class="video-features">
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <span>Proven marketing systems that actually work</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <span>Real results from real healthcare professionals</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <span>90-day transformation guaranteed</span>
+          </div>
+        </div>
+      </div>
       <div class="video-wrapper">
         <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" 
-          title="Intro Video" allowfullscreen></iframe>
+          title="Transformation Video" allowfullscreen></iframe>
       </div>
-      <a href="#" class="btn-secondary">Book Free Strategy Call Now</a>
     </div>
   </section>
 
-  <!-- Discover Section -->
-  <section class="discover">
+  <!-- Services Bento Grid -->
+  <section class="services">
     <div class="container">
-      <h2>What you'll discover after Booking a Call with us?</h2>
-      <div class="discover-grid">
-        <div class="card">
-          <div class="card-icon">📊</div>
-          <h3>Proven Strategies</h3>
-          <p>Discover the proven marketing strategies that we have learnt and developed by working with successful clinics and hospitals that are generating 8-Figure revenues.</p>
+      <h2>The Complete Growth System</h2>
+      <p class="services-subtitle">Everything you need to dominate your local market</p>
+      <div class="bento-grid">
+        <div class="bento-item">
+          <div class="bento-icon">📊</div>
+          <h3>Data-Driven Strategy</h3>
+          <p>We analyze your market, competitors, and patient demographics to create a custom blueprint for your success.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🤖</div>
-          <h3>Automation & Engagement</h3>
-          <p>Harness personalized content, WhatsApp automation, and social media ads to nurture leads and convert them into loyal patients with retargeting strategies.</p>
+        <div class="bento-item">
+          <div class="bento-icon">🎯</div>
+          <h3>Patient Acquisition Engine</h3>
+          <p>Multi-channel campaigns that bring qualified patients to your door. From social media to Google, we cover it all with precision targeting and compelling messaging that converts.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">⭐</div>
-          <h3>Celebrity Doctor Status</h3>
-          <p>Discover the strategies to build yourself as a celebrity Doctor or Surgeon in your industry with the help of value driven marketing.</p>
+        <div class="bento-item">
+          <div class="bento-icon">🤖</div>
+          <h3>Automated Follow-Up</h3>
+          <p>Never lose a lead again with our intelligent WhatsApp and email automation that nurtures patients 24/7.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🎯</div>
-          <h3>Patient Acquisition System</h3>
-          <p>Top strategies to get new patients, improve case acceptance, increase patient retention and build up your strong healthcare referral system.</p>
+        <div class="bento-item">
+          <div class="bento-icon">⭐</div>
+          <h3>Authority Building</h3>
+          <p>Position yourself as the celebrity doctor in your specialty through strategic content and media presence.</p>
         </div>
-      </div>
-      <a href="#" class="btn-primary">Book Free Strategy Call Now</a>
-    </div>
-  </section>
-
-  <!-- Exclusively For -->
-  <section class="exclusive">
-    <div class="container">
-      <h2>This Strategy Call Is Exclusively For – <span>Healthcare Entrepreneurs</span></h2>
-      <div class="exclusive-grid">
-        <div class="tag">Physiotherapists & Chiropractors</div>
-        <div class="tag">Psychologists & Psychiatrists</div>
-        <div class="tag">Ayurvedic & Naturopathy</div>
-        <div class="tag">Gynecologists & Fertility Clinics</div>
-        <div class="tag">Dermatologists</div>
-        <div class="tag">Ophthalmologists</div>
-        <div class="tag">Nutritionists & Dietitians</div>
-        <div class="tag">Plastic & Aesthetic Surgeons</div>
-      </div>
-      <a href="#" class="btn-primary">Book Free Strategy Call Now</a>
-    </div>
-  </section>
-
-  <!-- Who We Are -->
-  <section class="who-we-are">
-    <div class="container">
-      <h2>Who are we?</h2>
-      <div class="who-content">
-        <p>At Grow Medico, we are more than just a healthcare marketing agency; we are dreamers, innovators, and coffee enthusiasts on a mission to revolutionise the healthcare industry. With a cup of coffee and a heart full of passion, we embark on a journey to transform clinics and hospitals into thriving beacons of success.</p>
-        <p>Like master alchemists, we concoct value-driven marketing strategies that cater to every step of your patient's journey. From the first sip of awareness to the final drop of loyalty, our magic blends seamlessly, ensuring an unforgettable experience for both you and your patients.</p>
-        <p>We started this agency with only 2 people, and within 1.5 years, we grew to a team of 20 with 2 offices in India, serving clients globally. Just like a symphony, our diverse team harmonises expertise, creativity, and empathy to create symphonies of success for our clients.</p>
       </div>
     </div>
   </section>
 
-  <!-- Clients -->
-  <section class="clients">
-    <div class="container">
-      <h2>Our trusted Clients</h2>
-      <div class="client-logos">
-        <div style="width: 150px; height: 80px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center;">Client 1</div>
-        <div style="width: 150px; height: 80px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center;">Client 2</div>
-        <div style="width: 150px; height: 80px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center;">Client 3</div>
-        <div style="width: 150px; height: 80px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center;">Client 4</div>
-        <div style="width: 150px; height: 80px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center;">Client 5</div>
+  <!-- Specialties Horizontal Scroll -->
+  <section class="specialties">
+    <h2>Built Exclusively For Healthcare Leaders</h2>
+    <p class="specialties-subtitle">We only work with serious healthcare entrepreneurs ready to scale</p>
+    <div class="specialties-scroll">
+      <div class="specialty-card">
+        <h3>Physiotherapy & Chiropractic</h3>
+        <p>Transform your practice into a wellness destination with consistent patient flow and premium positioning.</p>
+      </div>
+      <div class="specialty-card">
+        <h3>Mental Health Practices</h3>
+        <p>Build trust and attract clients who value your expertise through compassionate, value-driven marketing.</p>
+      </div>
+      <div class="specialty-card">
+        <h3>Alternative Medicine</h3>
+        <p>Break through skepticism and establish yourself as the trusted authority in Ayurveda and Naturopathy.</p>
+      </div>
+      <div class="specialty-card">
+        <h3>Women's Health</h3>
+        <p>Connect with expectant mothers and women seeking specialized care with empathetic, targeted campaigns.</p>
+      </div>
+      <div class="specialty-card">
+        <h3>Dermatology & Aesthetics</h3>
+        <p>Showcase transformations and attract high-value cosmetic patients ready to invest in themselves.</p>
+      </div>
+      <div class="specialty-card">
+        <h3>Eye Care Specialists</h3>
+        <p>Position your practice as the premier choice for vision correction and eye health in your region.</p>
+      </div>
+      <div class="specialty-card">
+        <h3>Nutrition & Wellness</h3>
+        <p>Build a thriving practice with clients committed to long-term health transformations.</p>
+      </div>
+      <div class="specialty-card">
+        <h3>Cosmetic Surgery</h3>
+        <p>Attract premium clients and establish yourself as the surgeon of choice for aesthetic procedures.</p>
       </div>
     </div>
   </section>
 
-  <!-- Challenges -->
+  <!-- About Two Column -->
+  <section class="about">
+    <div class="about-content">
+      <div class="about-image"></div>
+      <div class="about-text">
+        <h2>We're Not Just Marketers, We're Growth Partners</h2>
+        <p>At Grow Medico, we live and breathe healthcare marketing. While others treat your practice as just another client, we become an extension of your team, obsessing over your growth like it's our own.</p>
+        <p>Started by two passionate entrepreneurs with nothing but laptops and ambition, we've scaled to a 20-person team with offices across India, serving healthcare leaders globally.</p>
+        <p>Our secret? We only do one thing—healthcare marketing—and we do it better than anyone else. Every campaign, every strategy, every piece of content is crafted specifically for the healthcare industry.</p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="about-stat-number">20+</div>
+            <div class="about-stat-label">Team Members</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-number">2</div>
+            <div class="about-stat-label">Office Locations</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-number">1.5</div>
+            <div class="about-stat-label">Years to Scale</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenges Masonry -->
   <section class="challenges">
     <div class="container">
-      <h2>Our Clients' Challenges: (That we've solved)</h2>
-      <div class="challenge-list">
-        <div class="challenge">Competition in the Healthcare Industry</div>
-        <div class="challenge">Unclear Return on Investment (ROI)</div>
-        <div class="challenge">Inconsistent Patient Flow</div>
-        <div class="challenge">Difficulty in Identifying Target Audience</div>
-        <div class="challenge">Lack of Marketing Knowledge</div>
-        <div class="challenge">Engaging Online Presence</div>
-        <div class="challenge">Attracting New Patients</div>
-        <div class="challenge">Building Referral Networks</div>
-        <div class="challenge">Maintaining Patient Retention</div>
+      <h2>Problems We Solve Daily</h2>
+      <div class="masonry-grid">
+        <div class="challenge-card">
+          <h3>Fierce Competition</h3>
+          <p>Stand out in a saturated market where every corner has a clinic claiming to be the best.</p>
+        </div>
+        <div class="challenge-card">
+          <h3>Unpredictable Revenue</h3>
+          <p>Build a steady stream of patients instead of feast-or-famine months that keep you up at night.</p>
+        </div>
+        <div class="challenge-card">
+          <h3>Wasted Ad Spend</h3>
+          <p>Get crystal clear ROI tracking so every rupee works harder for your practice.</p>
+        </div>
+        <div class="challenge-card">
+          <h3>Wrong Patient Targeting</h3>
+          <p>Attract your ideal patients who value quality care and can afford your premium services.</p>
+        </div>
+        <div class="challenge-card">
+          <h3>Marketing Confusion</h3>
+          <p>Stop second-guessing your marketing and follow a proven system that works.</p>
+        </div>
+        <div class="challenge-card">
+          <h3>Invisible Online Presence</h3>
+          <p>Transform from a hidden gem to the obvious choice when patients search for your specialty.</p>
+        </div>
+        <div class="challenge-card">
+          <h3>Low Patient Retention</h3>
+          <p>Turn one-time visitors into loyal patients who refer their friends and family.</p>
+        </div>
+        <div class="challenge-card">
+          <h3>Weak Referral Networks</h3>
+          <p>Build a referral system that brings quality patients consistently without cold calling.</p>
+        </div>
+        <div class="challenge-card">
+          <h3>Case Acceptance Issues</h3>
+          <p>Improve your consultation close rate with patients who understand and value your expertise.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <!-- Testimonials Grid -->
   <section class="testimonials">
     <div class="container">
-      <h2>STILL NOT CONVINCED?</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+      <h2>Real Doctors. Real Results. Real Growth.</h2>
+      <div class="testimonials-track">
+        <div class="testimonial-video">
+          <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
         </div>
-        <div class="testimonial-card">
-          <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        <div class="testimonial-video">
+          <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
         </div>
-        <div class="testimonial-card">
-          <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        <div class="testimonial-video">
+          <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
         </div>
-        <div class="testimonial-card">
-          <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        <div class="testimonial-video">
+          <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <!-- FAQ Accordion -->
   <section class="faq">
     <div class="container">
-      <h2>Frequently asked questions?</h2>
-      <div class="faq-grid">
+      <h2>Your Questions, Answered</h2>
+      <div class="faq-container">
         <div class="faq-item">
           <div class="faq-question">
-            <span>How is your agency different from other marketing agencies?</span>
-            <span class="faq-arrow">▶</span>
+            <span>What makes your agency different from other marketing agencies?</span>
+            <div class="faq-icon">+</div>
           </div>
           <div class="faq-answer">
-            At our marketing agency, we set ourselves apart by only working with clients in the healthcare sector. We believe that this focus allows us to provide our clients with the best results possible. Additionally, we don't believe in simply running social media and Google ads to generate leads. Instead, we focus on building a marketing system that will generate sales. By only working with a limited number of clients, we are able to maintain a focus on quality over quantity.
+            <p>We exclusively serve healthcare professionals, which means every strategy, campaign, and piece of content is battle-tested in the medical field. We don't waste your time running generic ads—we build complete marketing systems designed to establish you as the authority in your specialty and generate predictable patient flow.</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-question">
-            <span>How much of an ROI can I expect?</span>
-            <span class="faq-arrow">▶</span>
+            <span>What kind of ROI can I realistically expect?</span>
+            <div class="faq-icon">+</div>
           </div>
           <div class="faq-answer">
-            Our marketing system is designed to produce a 3-10X return on investment for our clients. This means that you can expect to see a significant return on your ad spending within the first 45 days. Remember, our marketing systems and strategies are duplicated from our clients' successful campaigns. This ensures that you will only be given winning ideas from day one.
+            <p>Our clients typically see a 3-10X return on their marketing investment within the first 45 days. This isn't luck—it's the result of implementing proven strategies duplicated from our most successful campaigns. You're getting winning formulas from day one, not experimental tactics.</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-question">
-            <span>Can you guys also help in Case Acceptance?</span>
-            <span class="faq-arrow">▶</span>
+            <span>Can you help improve my case acceptance rates?</span>
+            <div class="faq-icon">+</div>
           </div>
           <div class="faq-answer">
-            If you're struggling to increase "case acceptance", we can help. Sales are essential for every practice, and marketing can create opportunities for high-ticket patients. However, if you're not able to close the deal, it's pointless. We offer to coach you to help you increase case acceptance. We're also in the process of creating a video series on this topic.
+            <p>Absolutely. Attracting high-ticket patients is only half the battle. We provide coaching to help you convert consultations into accepted cases, and we're developing a comprehensive video training series on this exact topic. Plus, our marketing pre-educates patients about your value before they even walk through your door.</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-question">
-            <span>Will you call the leads as well?</span>
-            <span class="faq-arrow">▶</span>
+            <span>Will your team handle lead follow-up calls?</span>
+            <div class="faq-icon">+</div>
           </div>
           <div class="faq-answer">
-            Yes, we do have a team of experts who make calls to leads from our end, but if you want your staff to handle that task, we will teach them how to follow up with leads in the most effective way possible. Additionally, using our automated follow-up systems will increase the likelihood of you closing phone calls.
+            <p>Yes, we have a dedicated team that can manage initial lead calls. However, if you prefer your staff to handle this, we'll train them on our proven follow-up methodology. Additionally, our automated systems nurture leads 24/7, dramatically increasing your close rate before anyone picks up the phone.</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-question">
-            <span>Do you offer services that can be chosen individually?</span>
-            <span class="faq-arrow">▶</span>
+            <span>Can I pick and choose individual services?</span>
+            <div class="faq-icon">+</div>
           </div>
           <div class="faq-answer">
-            At the moment, we do not offer services that can be chosen individually because we want to maintain the quality of results that we deliver to clients. We understand that some clients might request this, but they may not fully understand how marketing channels work together. Our flagship 90 day marketing system is the only service that we offer at the moment. In just three months, we will use Facebook, Instagram, GMB, and Google Ads to make you the authority in your city.
+            <p>We don't offer à la carte services because fragmented marketing doesn't work. Our 90-day system integrates Facebook, Instagram, Google My Business, and Google Ads into a cohesive strategy that establishes you as the undisputed authority in your city. Cherry-picking services would compromise the results we guarantee.</p>
           </div>
         </div>
         <div class="faq-item">
           <div class="faq-question">
-            <span>Do you guys Sell Courses or Mentorship?</span>
-            <span class="faq-arrow">▶</span>
+            <span>Do you sell courses or mentorship programs?</span>
+            <div class="faq-icon">+</div>
           </div>
           <div class="faq-answer">
-            No, we don't sell courses or mentorship because we believe that our clients should be results-oriented and not have to invest their time in something that we can do for them. Just like if you wanted to buy a car, you would go to a dealership and purchase it – you wouldn't buy a course on how to build a car. Time is precious and we want to save our clients time by doing the work for them so they can get back to living their life!
+            <p>No. We're a done-for-you agency, not educators. Your time is too valuable to spend learning marketing when you should be treating patients. When you need a car, you buy one—you don't take a course on building cars. We handle everything so you can focus on what you do best: practicing medicine.</p>
           </div>
         </div>
       </div>
@@ -850,162 +1209,264 @@
   </section>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <p>Copyright © 2024 Grow Medico, Crowd Developer | This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>GROW <span style="color: #3b82f6;">MEDICO</span></h3>
+        <p>Transforming healthcare practices into patient magnets through proven marketing systems and authentic authority building.</p>
+        <a href="#" class="btn-primary">Start Your Transformation →</a>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Our Process</a>
+          <a href="#">Case Studies</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
         <div class="footer-links">
           <a href="#">Terms of Service</a>
           <a href="#">Privacy Policy</a>
+          <a href="#">Disclaimer</a>
         </div>
       </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © 2024 Grow Medico. This site is not affiliated with or endorsed by Facebook Inc. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
     </div>
   </footer>
 
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    window.addEventListener('DOMContentLoaded', () => {
-      // Small delay to ensure DOM is fully ready
-      setTimeout(() => {
-        // Hero animations
-        gsap.from('.hero h1', { 
-          y: 80, 
-          opacity: 0, 
-          duration: 1.2, 
-          ease: 'power3.out',
-          clearProps: 'all'
-        });
-        
-        gsap.from('.hero p', { 
-          y: 50, 
-          opacity: 0, 
-          duration: 1, 
-          delay: 0.3, 
-          ease: 'power3.out',
-          clearProps: 'all'
-        });
-        
-        gsap.from('.hero .btn-primary', { 
-          scale: 0.8, 
-          opacity: 0, 
-          duration: 0.8, 
-          delay: 0.6, 
-          ease: 'back.out(1.7)',
-          clearProps: 'all'
-        });
+    document.addEventListener('DOMContentLoaded', () => {
+      // Navbar scroll effect
+      const navbar = document.querySelector('.navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-          const navbar = document.querySelector('.navbar');
-          if (window.scrollY > 100) {
-            navbar.classList.add('scrolled');
-          } else {
-            navbar.classList.remove('scrolled');
-          }
-        });
+      // Hero animations with proper cleanup
+      gsap.from('.hero-left h1', { 
+        y: 60, 
+        opacity: 0, 
+        duration: 1, 
+        ease: 'power3.out',
+        onComplete: function() {
+          gsap.set('.hero-left h1', { clearProps: 'all' });
+        }
+      });
+      
+      gsap.from('.hero-left p', { 
+        y: 40, 
+        opacity: 0, 
+        duration: 0.8, 
+        delay: 0.2, 
+        ease: 'power3.out',
+        onComplete: function() {
+          gsap.set('.hero-left p', { clearProps: 'all' });
+        }
+      });
+      
+      gsap.from('.hero-left .btn-primary', { 
+        scale: 0.9, 
+        opacity: 0, 
+        duration: 0.6, 
+        delay: 0.4, 
+        ease: 'back.out(1.5)',
+        onComplete: function() {
+          gsap.set('.hero-left .btn-primary', { clearProps: 'all' });
+        }
+      });
 
-        // Sections fade-up animation
-        const sections = document.querySelectorAll('section');
-        sections.forEach(section => {
-          const elements = section.querySelectorAll('.container > *');
-          if (elements.length > 0) {
-            gsap.from(elements, {
-              scrollTrigger: {
-                trigger: section,
-                start: 'top 85%',
-                toggleActions: 'play none none none'
-              },
-              y: 40,
-              opacity: 0,
-              duration: 0.8,
-              stagger: 0.15,
-              ease: 'power3.out',
-              clearProps: 'all'
-            });
-          }
-        });
+      gsap.from('.stat-card', {
+        x: 50,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        delay: 0.3,
+        ease: 'power3.out',
+        onComplete: function() {
+          gsap.set('.stat-card', { clearProps: 'all' });
+        }
+      });
 
-        // Card hover effects
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-          card.addEventListener('mouseenter', () => {
-            gsap.to(card, { y: -5, duration: 0.3, ease: 'power2.out' });
-          });
-          card.addEventListener('mouseleave', () => {
-            gsap.to(card, { y: 0, duration: 0.3, ease: 'power2.out' });
-          });
-        });
-
-        // Tags animation
-        const tags = document.querySelectorAll('.tag');
-        if (tags.length > 0) {
-          gsap.from(tags, {
-            scrollTrigger: {
-              trigger: '.exclusive-grid',
-              start: 'top 85%',
-              toggleActions: 'play none none none'
-            },
-            scale: 0.9,
+      // Video section animations
+      ScrollTrigger.create({
+        trigger: '.video-section',
+        start: 'top 80%',
+        once: true,
+        onEnter: () => {
+          gsap.from('.video-info', {
+            x: -50,
             opacity: 0,
-            duration: 0.4,
-            stagger: 0.08,
-            ease: 'power2.out',
-            clearProps: 'all'
+            duration: 1,
+            ease: 'power3.out',
+            onComplete: function() {
+              gsap.set('.video-info', { clearProps: 'all' });
+            }
+          });
+
+          gsap.from('.video-wrapper', {
+            x: 50,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out',
+            onComplete: function() {
+              gsap.set('.video-wrapper', { clearProps: 'all' });
+            }
           });
         }
+      });
 
-        // Challenges animation
-        const challenges = document.querySelectorAll('.challenge');
-        if (challenges.length > 0) {
-          gsap.from(challenges, {
-            scrollTrigger: {
-              trigger: '.challenge-list',
-              start: 'top 85%',
-              toggleActions: 'play none none none'
-            },
-            x: -30,
+      // Bento grid animations
+      ScrollTrigger.create({
+        trigger: '.bento-grid',
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+          gsap.from('.bento-item', {
+            scale: 0.9,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: 'power2.out',
+            onComplete: function() {
+              gsap.set('.bento-item', { clearProps: 'all' });
+            }
+          });
+        }
+      });
+
+      // Specialty cards animations
+      ScrollTrigger.create({
+        trigger: '.specialties',
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+          gsap.from('.specialty-card', {
+            y: 30,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: 'power2.out',
+            onComplete: function() {
+              gsap.set('.specialty-card', { clearProps: 'all' });
+            }
+          });
+        }
+      });
+
+      // About section animations
+      ScrollTrigger.create({
+        trigger: '.about',
+        start: 'top 80%',
+        once: true,
+        onEnter: () => {
+          gsap.from('.about-image', {
+            scale: 0.9,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out',
+            onComplete: function() {
+              gsap.set('.about-image', { clearProps: 'all' });
+            }
+          });
+
+          gsap.from('.about-text', {
+            x: 50,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out',
+            onComplete: function() {
+              gsap.set('.about-text', { clearProps: 'all' });
+            }
+          });
+        }
+      });
+
+      // Challenge cards animations
+      ScrollTrigger.create({
+        trigger: '.challenges',
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+          gsap.from('.challenge-card', {
+            y: 30,
             opacity: 0,
             duration: 0.5,
             stagger: 0.08,
             ease: 'power2.out',
-            clearProps: 'all'
+            onComplete: function() {
+              gsap.set('.challenge-card', { clearProps: 'all' });
+            }
           });
         }
+      });
 
-        // FAQ animation
-        const faqItems = document.querySelectorAll('.faq-item');
-        if (faqItems.length > 0) {
-          gsap.from(faqItems, {
-            scrollTrigger: {
-              trigger: '.faq-grid',
-              start: 'top 85%',
-              toggleActions: 'play none none none'
-            },
+      // Testimonials animations
+      ScrollTrigger.create({
+        trigger: '.testimonials',
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+          gsap.from('.testimonial-video', {
+            scale: 0.95,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: 'power2.out',
+            onComplete: function() {
+              gsap.set('.testimonial-video', { clearProps: 'all' });
+            }
+          });
+        }
+      });
+
+      // FAQ animations
+      ScrollTrigger.create({
+        trigger: '.faq',
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+          gsap.from('.faq-item', {
             y: 20,
             opacity: 0,
             duration: 0.5,
-            stagger: 0.08,
+            stagger: 0.1,
             ease: 'power2.out',
-            clearProps: 'all'
+            onComplete: function() {
+              gsap.set('.faq-item', { clearProps: 'all' });
+            }
           });
         }
+      });
 
-        // FAQ Toggle Functionality
-        faqItems.forEach(item => {
-          const question = item.querySelector('.faq-question');
-          question.addEventListener('click', () => {
-            // Close all other FAQ items
-            faqItems.forEach(otherItem => {
-              if (otherItem !== item && otherItem.classList.contains('active')) {
-                otherItem.classList.remove('active');
-              }
-            });
-            // Toggle current item
-            item.classList.toggle('active');
+      // FAQ Toggle functionality
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          // Close all items
+          faqItems.forEach(otherItem => {
+            otherItem.classList.remove('active');
           });
+          
+          // Open clicked item if it wasn't active
+          if (!isActive) {
+            item.classList.add('active');
+          }
         });
-      }, 100); // Small delay to ensure everything is rendered
+      });
     });
   </script>
 </body>
