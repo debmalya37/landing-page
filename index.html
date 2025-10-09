@@ -1122,26 +1122,95 @@
       color: #fafafb;
       font-weight: 600;
   }
-
   .urgency-box {
-      background: linear-gradient(135deg, #c31c1c 0%, #8c0e0e 100%);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-      margin: 80px 0;
-  }
+    background: linear-gradient(135deg, #c31c1c 0%, #8c0e0e 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 60px 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
 
-  .urgency-box h2 {
-      font-size: 48px;
-      margin-bottom: 24px;
-  }
+.urgency-box h2 {
+    font-size: 36px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
 
-  .urgency-box .spots {
-      font-size: 72px;
-      font-weight: 800;
-      margin: 32px 0;
-      text-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  }
+.urgency-box .spots {
+    font-size: 64px;
+    font-weight: 800;
+    margin: 16px 0;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.urgency-box .notice {
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+
+.urgency-box .cta-button {
+    display: inline-block;
+    background-color: #fff;
+    color: #c31c1c;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.urgency-box .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .urgency-box {
+        padding: 30px 15px;
+        margin: 40px 0;
+    }
+
+    .urgency-box h2 {
+        font-size: 28px;
+    }
+
+    .urgency-box .spots {
+        font-size: 48px;
+    }
+
+    .urgency-box .notice {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .urgency-box .cta-button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .urgency-box h2 {
+        font-size: 24px;
+    }
+
+    .urgency-box .spots {
+        font-size: 36px;
+    }
+
+    .urgency-box .notice {
+        font-size: 16px;
+    }
+
+    .urgency-box .cta-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
 
   .process-section {
       padding: 80px 20px;
@@ -1274,6 +1343,10 @@
 
       .hero h1 { font-size: 2.2rem; }
       .hero p { font-size: 1.1rem; }
+
+      .hero{
+        min-height: 50vh;
+      }
 
       .video-section {
         clip-path: none;
@@ -1588,11 +1661,12 @@
 </section>
 
 <div class="urgency-box">
-  <h2>We Can Only Work With</h2>
+  <h2>We Only Work With</h2>
   <div class="spots">3 DOCTORS</div>
-  <p style="font-size: 24px; margin-bottom: 32px;">This quarter. Once these spots are filled, the next opening is January 2026.</p>
+  <p class="notice">Once these spots are filled, the next opening is January 2026.</p>
   <a href="#booking" class="cta-button">Claim Your Spot Now</a>
 </div>
+
 
 <section class="process-section">
   <div class="container">
@@ -1637,10 +1711,10 @@
           <h3>Fierce Competition</h3>
           <p>Stand out in a saturated market where every corner has a clinic claiming to be the best.</p>
         </div>
-        <div class="challenge-card">
+        <!-- <div class="challenge-card">
           <h3>Unpredictable Revenue</h3>
           <p>Build a steady stream of patients instead of feast-or-famine months that keep you up at night.</p>
-        </div>
+        </div> -->
         <div class="challenge-card">
           <h3>Wasted Ad Spend</h3>
           <p>Get crystal clear ROI tracking so every rupee works harder for your practice.</p>
@@ -1661,14 +1735,14 @@
           <h3>Low Patient Retention</h3>
           <p>Turn one-time visitors into loyal patients who refer their friends and family.</p>
         </div>
-        <div class="challenge-card">
+        <!-- <div class="challenge-card">
           <h3>Weak Referral Networks</h3>
           <p>Build a referral system that brings quality patients consistently without cold calling.</p>
-        </div>
-        <div class="challenge-card">
+        </div> -->
+        <!-- <div class="challenge-card">
           <h3>Case Acceptance Issues</h3>
           <p>Improve your consultation close rate with patients who understand and value your expertise.</p>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
