@@ -1104,6 +1104,15 @@
     font-size: 26px;
   }
 
+  .section-title {
+    font-size: 22px;
+    font-weight: 600;
+   
+}
+.section-subtitle {
+  font-size: 15px;
+}
+
   .checklist-item {
     padding: 16px;
     gap: 12px;
@@ -1272,6 +1281,8 @@
         padding: 30px 15px;
         margin: 40px 0;
     }
+  
+
 
     .urgency-box h2 {
         font-size: 28px;
@@ -1294,11 +1305,11 @@
 
 @media (max-width: 480px) {
     .urgency-box h2 {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .urgency-box .spots {
-        font-size: 36px;
+        font-size: 30px;
     }
 
     .urgency-box .notice {
@@ -1308,6 +1319,14 @@
     .urgency-box .cta-button {
         padding: 10px 20px;
         font-size: 14px;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 15px;
     }
 }
 
@@ -1421,6 +1440,49 @@
     }
 
     @media(max-width: 768px) {
+
+      .step-number {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #1e40af 0%, #7e22ce 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        font-weight: 800;
+        flex-shrink: 0;
+        box-shadow: 0 8px 24px rgba(30, 64, 175, 0.3);
+    }
+  
+    .step-content {
+        flex: 1;
+        padding-top: 8px;
+    }
+  
+    .step-content h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+        color: #f4eeee;
+    }
+    
+  .cta-section h2 {
+    font-size: 23px;
+    margin-bottom: 24px;
+}
+
+.cta-section p {
+    font-size: 17px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+  
+    .step-content p {
+        font-size: 15px;
+        color: #6b7280;
+        line-height: 1.7;
+    }
       .navbar {
         width: 100%;
         top: 65px;
@@ -1454,7 +1516,7 @@
       }
 
       .services h2, .specialties h2, .challenges h2, .testimonials h2, .faq h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
 
       .bento-grid {
