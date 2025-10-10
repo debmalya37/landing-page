@@ -1672,6 +1672,429 @@
   }
 }
 
+
+/* WHO WE ARE SECTION */
+.who-we-are {
+  background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+  color: #e5e7eb;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glowing orbs for depth */
+.who-we-are::before,
+.who-we-are::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.25;
+}
+.who-we-are::before {
+  top: -80px;
+  left: -80px;
+  width: 280px;
+  height: 280px;
+  background: #2563eb;
+}
+.who-we-are::after {
+  bottom: -80px;
+  right: -80px;
+  width: 280px;
+  height: 280px;
+  background: #3b82f6;
+}
+
+.who-we-are h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.who-we-are p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: 0.8rem auto;
+  color: #cbd5e1;
+}
+
+/* Highlight client names */
+.who-we-are .highlight {
+  font-weight: 700;
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.who-we-are .mission {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #60a5fa;
+  margin: 2rem 0 1rem;
+}
+
+/* CTA style emphasis */
+.who-we-are .cta-text {
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #c3ddfb;
+  font-size: 1rem;
+}
+
+/* Client logo/strip (optional) */
+.client-strip {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.client-strip span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #facc15;
+  background: rgba(255,255,255,0.08);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+.client-strip span:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.15);
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  .who-we-are {
+    padding: 60px 16px;
+  }
+  .who-we-are h2 {
+    font-size: 2rem;
+  }
+  .who-we-are p {
+    font-size: 1rem;
+  }
+  .client-strip {
+    gap: 1rem;
+  }
+  .client-strip span {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+
+/* Section background */
+.who-we-section {
+  position: relative;
+  background: linear-gradient(to bottom, #0a0f1f, #111827);
+  color: white;
+  padding: 4rem 1rem;
+  overflow: hidden;
+  text-align: center;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* Background glowing blobs (softer + elegant) */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: pulse 6s infinite ease-in-out alternate;
+  opacity: 0.2;
+}
+
+.blob-blue {
+  top: -60px;
+  left: -60px;
+  width: 280px;
+  height: 280px;
+  background: rgba(30, 144, 255, 0.4); /* Dodger Blue */
+}
+
+.blob-indigo {
+  bottom: -100px;
+  right: -100px;
+  width: 380px;
+  height: 380px;
+  background: rgba(138, 43, 226, 0.35); /* Blue Violet */
+}
+
+@keyframes pulse {
+  from { transform: scale(1); opacity: 0.25; }
+  to { transform: scale(1.2); opacity: 0.45; }
+}
+
+/* Container */
+.container {
+  position: relative;
+  max-width: 950px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+/* Headline */
+#who {
+  font-size: 2.7rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #4f9eff, #7dd3fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+
+}
+
+/* Highlighted glass card */
+.highlight-box {
+  margin: 2rem auto 0;
+  max-width: 720px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  padding: 1.8rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  color: #dce3f0;
+}
+
+.highlight-yellow {
+  color: #fbbf24; /* soft golden yellow */
+  font-weight: bold;
+}
+
+.highlight-cyan {
+  color: #77d0f6; /* cyan-blue */
+  font-weight: 600;
+}
+
+.subtext {
+  margin-top: 1rem;
+  font-size: 1.15rem;
+  color: #cbd5e1;
+}
+
+.bold-white {
+  font-weight: bold;
+  color: #f1f5f9;
+}
+
+.cta {
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  color: #ffffff;
+  font-weight: 500;
+
+}
+
+.cta-strong {
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Buttons */
+.button-group {
+  margin-top: 2.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.9rem 1.6rem;
+  border: none;
+  border-radius: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+  transform-style: preserve-3d;
+}
+
+/* Buttons refined with soft neon gradient glows */
+.btn-yellow {
+  background: linear-gradient(135deg, #facc15, #d97706);
+  box-shadow: 0 4px 15px rgba(250, 204, 21, 0.4);
+}
+.btn-yellow:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(250, 204, 21, 0.6);
+}
+
+.btn-cyan {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+.btn-cyan:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+}
+
+.btn-pink {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+.btn-pink:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+}
+
+/* ======= GLOBAL TYPOGRAPHY ======= */
+.who-we-section {
+  font-family: "Poppins", "Segoe UI", Roboto, sans-serif;
+  letter-spacing: 0.3px;
+}
+
+#who {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "Playfair Display", serif; /* Luxurious serif for headline */
+  background: linear-gradient(to right, #e0e7ff, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+.highlight-box,
+.subtext,
+.cta {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+/* Make important highlights feel classy */
+.highlight-yellow {
+  color: #facc15;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+
+.highlight-cyan {
+  color: #60a5fa;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.bold-white {
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.cta {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #93c5fd;
+  font-family: "Poppins", sans-serif;
+  text-shadow: 0 3px 12px rgba(59, 130, 246, 0.35);
+}
+
+.cta-strong {
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* ======= BUTTONS ======= */
+.button-group {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Base button style */
+.btn {
+  padding: 0.9rem 2rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgb(255, 255, 255);
+  background: linear-gradient(135deg, rgb(185, 203, 246), rgb(246, 248, 255));
+  backdrop-filter: blur(12px);
+  color: #0a4388; /* elegant blue text */
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  
+  letter-spacing: 0.4px;
+}
+
+/* Hover effect: soft glow */
+.btn:hover {
+  background: linear-gradient(135deg, rgb(20, 93, 204), rgb(97, 151, 243));
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 20px rgb(255, 255, 255);
+  color: #072c56;
+}
+
+/* Remove old colored variants */
+.btn-yellow,
+.btn-cyan,
+.btn-pink {
+  padding: 0.9rem 2rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgb(255, 255, 255);
+  background: linear-gradient(135deg, rgb(185, 203, 246), rgb(246, 248, 255));
+  backdrop-filter: blur(12px);
+  color: #0a4388; /* elegant blue text */
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  
+  letter-spacing: 0.4px;
+}
+
+/* Client logo/strip */
+.client-strip {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.client-strip span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0b3b75;
+  background: rgb(243, 246, 250);
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+  letter-spacing: 0.4px;
+}
+
+.client-strip span:hover {
+  transform: scale(1.05);
+  background: rgb(118, 175, 250);
+  box-shadow: 0 0 12px rgba(96,165,250,0.4);
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .client-strip {
+    gap: 0.8rem;
+  }
+  .client-strip span {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -2040,6 +2463,46 @@
     </div>
   </section> -->
 
+<!-- Who Are We Section -->
+<section class="who-we-section" id="whoweare">
+  <!-- Background glowing blobs -->
+  <div class="blob blob-blue"></div>
+  <div class="blob blob-indigo"></div>
+
+  <div class="container">
+    <h2 id="who">Who are we?</h2>
+
+    <p class="highlight-box">
+      After a decade building brands for 
+      <span class="highlight-yellow">Suniel Shetty</span> and 
+      <span class="highlight-yellow">Aditya Birla Group</span>, we made a decision: <br>
+      <span class="highlight-cyan">Go narrow. Go deep. And help the healthcare industry.</span>
+    </p>
+
+    <p class="highlight-box">
+      Our mission: <span class="bold-white">Strategic brand positioning & patient journey mapping.</span><br>
+      The result? <span class="highlight-yellow bold">Millions of views</span> + real patient appointments.
+    </p>
+
+    <p class="cta">
+      The doctors dominating your specialty didn’t wait.<br>
+      <span class="cta-strong">This is your chance to build your brand.</span>
+    </p>
+
+    <!-- Client Showcase -->
+    <div class="client-strip">
+      <span>Suniel Shetty</span>
+      <span>Aditya Birla Group</span>
+      <span>Healthcare Leaders</span>
+    </div>
+
+  </div>
+  <br>
+  <a href="#booking" class="cta-button">Book your free Strategy Call →</a>
+</section>
+
+  
+
   <!-- FAQ Accordion -->
   <section class="faq">
     <div class="container">
@@ -2090,6 +2553,7 @@
     <div class="footer-brand">
       
         <h3>THE<span style="color: #3b82f6;">SERIOUS</span>PEOPLE</h3>
+        <a href="#whoweare"  class="cta-button" style="background: white; color: #1e40af;">WHO<span style="color: #3b82f6;"> WE</span> ARE</a>
         <p style="font-size: 14px; margin-bottom: 16px;"><strong>P.S.</strong> Still on the fence? Ask yourself: Where will your practice be 12 months from now if nothing changes?</p>
           <p style="font-size: 14px; opacity: 0.8;">The doctors dominating your specialty didn't wait. They built their brands when they had the chance. This is yours.</p>
         <a href="#" class="cta-button">Book your free Strategy Call →</a>
