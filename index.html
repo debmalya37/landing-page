@@ -608,7 +608,9 @@
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000; /* Starts invisible */
     }
-
+    #cta-sticky-mobile {
+        display: none;
+    }
     .text-container h2 {
         font-family: var(--font-heading);
         font-size: 2.5em;
@@ -640,7 +642,12 @@
             gap: 40px;
             text-align: center;
         }
-        
+        #cta-sticky-pc {
+            display: none;
+        }
+        #cta-sticky-mobile {
+            display: block;
+        }
         .clients-list span:not(:last-child)::after {
             display: none;
         }
@@ -1588,13 +1595,13 @@
                     </span>
                 </h2>
                 <p class="section-subtitle">If you recognize these symptoms in your practice, it's a clear diagnosis: your brand needs immediate attention before the condition worsens.</p>
-                <!-- <div class="sticky-cta">
+                <div class="sticky-cta" id="cta-sticky-pc">
                     <h4>Checked 3 or More?</h4>
                     <p>You're likely losing patients and revenue daily. It's time for a professional diagnosis.</p>
                     <a href="#booking" class="cta-button">Book Your Free Brand Audit</a>
-                </div> -->
+                </div>
             </div>
-            <div class="warning-signs-right">
+            <div class="warning-signs-right" >
                 <div class="warning-card">
                     <div class="warning-card-icon">⚠️</div>
                     <div class="warning-card-content">
@@ -1662,7 +1669,7 @@
                     </div>
                 </div>
             </div>
-            <div class="sticky-cta">
+            <div class="sticky-cta" id="cta-sticky-mobile">
                 <h4>Checked 3 or More?</h4>
                 <p>You're likely losing patients and revenue daily. It's time for a professional diagnosis.</p>
                 <a href="#booking" class="cta-button">Book Your Free Brand Audit</a>
