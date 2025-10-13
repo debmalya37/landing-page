@@ -1371,6 +1371,51 @@
         }
     }
 </style>
+<style>
+    /* ... (all your existing CSS code) ... */
+
+    /* ------------------- */
+    /* --- MOBILE HERO SECTION REFINEMENTS (max-width: 480px) --- */
+    /* ------------------- */
+    @media (max-width: 480px) {
+        .hero-card {
+            padding: 30px 20px; /* Reduces side padding */
+        }
+
+        .hero-headline {
+            font-size: 2.1em; /* ✅ Reduced font size to prevent wrapping */
+            line-height: 1.25; /* ✅ Tighter line spacing for a cleaner look */
+        }
+
+        /* Adjusts the underline for the smaller font size */
+        .hero-headline .highlight svg {
+            bottom: -8px; 
+            height: 25px;
+        }
+
+        .hero-description {
+            font-size: 1em; /* Makes the paragraph more compact */
+            margin-bottom: 30px;
+        }
+        
+        .past-clients {
+            padding: 12px;
+            margin-bottom: 30px;
+        }
+        .clients-list {
+            gap: 12px;
+        }
+
+        .hero-features {
+            margin-bottom: 30px;
+        }
+
+        .cta-area {
+            flex-direction: column;
+            gap: 25px;
+        }
+    }
+</style>
 </head>
 <body>
     <div id="custom-cursor"></div>
