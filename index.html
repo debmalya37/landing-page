@@ -1911,7 +1911,6 @@
     document.addEventListener('DOMContentLoaded', () => {
         gsap.registerPlugin(ScrollTrigger);
 
-        // ... (all your other animations)
 
         // --- PROCESS SECTION ANIMATION ---
         const processTimeline = gsap.timeline({
@@ -1951,14 +1950,13 @@
             });
         });
 
-        // ... (rest of your script)
+
     });
 </script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         gsap.registerPlugin(ScrollTrigger);
 
-        // ... (all your other animations)
 
         // --- ANIMATION FOR URGENCY BOX EMPHASIS ---
         gsap.to(".urgency-box .emphasis-underline svg circle", {
@@ -1972,14 +1970,11 @@
             }
         });
 
-        // ... (rest of your script)
     });
 </script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         gsap.registerPlugin(ScrollTrigger);
-
-        // ... (all your other animations)
 
         // --- UPDATED "Results Section" Animation ---
         gsap.utils.toArray('.result-card').forEach(card => {
@@ -2031,7 +2026,7 @@
             });
         });
 
-        // ... (rest of your script)
+     
     });
 </script>
 
@@ -2039,7 +2034,6 @@
     document.addEventListener('DOMContentLoaded', () => {
         gsap.registerPlugin(ScrollTrigger);
 
-        // ... (all your other animations like navbar, hero, etc.)
 
         // --- ANIMATION FOR EMPHASIS UNDERLINES ---
         gsap.utils.toArray('.emphasis-underline svg path').forEach(path => {
@@ -2054,12 +2048,11 @@
                 }
             });
         });
-        
-        // ... (rest of your script like FAQ, etc.)
+  
     });
 </script>
 <script>
-  // Make sure you have GSAP and ScrollTrigger loaded before this script runs.
+
   document.addEventListener('DOMContentLoaded', () => {
       gsap.registerPlugin(ScrollTrigger);
 
@@ -2183,12 +2176,6 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         gsap.registerPlugin(ScrollTrigger);
-
-        // ... (all your other animation scripts: Navbar, Hero, etc.)
-
-        // --- 9. CUSTOM CURSOR ANIMATION ---
-        // --- 9. CUSTOM CURSOR ANIMATION (UPDATED FOR SPEED) ---
-// --- 9. CUSTOM CURSOR ANIMATION (UPDATED FOR CENTERING) ---
 const cursor = document.getElementById('custom-cursor');
 
 if (cursor && window.matchMedia('(hover: hover)').matches) {
@@ -2197,7 +2184,6 @@ if (cursor && window.matchMedia('(hover: hover)').matches) {
     window.addEventListener('mousemove', (e) => {
         gsap.to(cursor, {
             duration: 0.2,
-            /* ✅ CHANGE THESE PROPERTIES */
             left: e.clientX,
             top: e.clientY,
             ease: "power2.out"
@@ -2209,8 +2195,6 @@ if (cursor && window.matchMedia('(hover: hover)').matches) {
         el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
     });
 }
-
-        // ... (rest of your script: FAQ, etc.)
     });
 </script>
 </body>
