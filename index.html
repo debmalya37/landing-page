@@ -1755,7 +1755,6 @@
 <section class="section results-section bg-slate-900 py-24">
   <div class="container max-w-7xl mx-auto px-6">
 
-<<<<<<< HEAD
     <!-- SECTION HEADING -->
     <h2 class="section-title text-center text-white">
       What Changes
@@ -1768,45 +1767,6 @@
         </svg>
       </span>
     </h2>
-=======
-            <!-- <div class="result-card">
-                 <div class="result-card-header">
-                    <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Dr. Michael Rodriguez">
-                    <div>
-                        <div class="name">Dr. Michael Rodriguez</div>
-                        <div class="specialty">Orthopedic Surgeon, Dallas</div>
-                    </div>
-                </div>
-                 <div class="result-highlight">
-                    <div class="highlight-number" data-prefix="$" data-suffix="M"><span class="counter" data-target="2.1">0</span></div>
-                    <p>Hospital Partnership Secured</p>
-                </div>
-                <div class="result-stat-list">
-                    <div class="result-stat">📅 Now booked 16 weeks in advance</div>
-                    <div class="result-stat">🎯 Became the go-to surgeon in specialty</div>
-                </div>
-                <!-- <div class="timeline">⏱ Timeline: 5 months</div> -->
-            <!-- </div> -->
-
-           <div class="result-card">
-                 <div class="result-card-header">
-                    <img src="https://res.cloudinary.com/dpcratanz/image/upload/v1761646369/WhatsApp_Image_2025-10-28_at_14.37.51_778a7a90_ximefs.jpg" alt="Dr. Michael Rodriguez">
-                    <div>
-                        <div class="name">Dr. Somesh Vanchilligam </div>
-                        <div class="specialty">Surgeon</div>
-                    </div>
-                </div>
-                 <div class="result-highlight">
-                    <!-- <div class="highlight-number" data-prefix="$" data-suffix="M"><span class="counter" data-target="2.1">0</span></div> -->
-                    <p>Did Brand positioning which catered authenticity</p>
-                </div>
-                <div class="result-stat-list">
-                    <div class="result-stat">📅Increased viewership from 0 to 2 lakhs +</div>
-                    <div class="result-stat">🎯 Launched a mega campaign for stroke awareness which 4x the revenue + brand positioning</div>
-                </div>
-                <!-- <div class="timeline">⏱ Timeline: 5 months</div> -->
-            </div>
->>>>>>> ff5aad94146ec2685561d7ef2c90433a5ca775bb
 
     <p class="section-subtitle text-center text-slate-400 max-w-3xl mx-auto mt-4">
       These are not marketing tricks. They are positioning shifts that change how
@@ -2263,208 +2223,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         gsap.registerPlugin(ScrollTrigger);
-<<<<<<< HEAD
     
-=======
-
-
-        // --- PROCESS SECTION ANIMATION ---
-        const processTimeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".process-section",
-                start: "top 40%",
-                end: "bottom 80%",
-                scrub: 1, // Smoothly animates as you scroll
-            }
-        });
-
-        // Animate the gold connecting line drawing itself
-        processTimeline.to(".connecting-line::before", {
-            height: "100%",
-        }, 0);
-        
-        // Animate each step fading/sliding in
-        gsap.utils.toArray('.process-step').forEach((step, index) => {
-            processTimeline.to(step, {
-                opacity: 1,
-                x: 0,
-                duration: 0.5,
-            }, index * 0.2); // Stagger the start of each step's animation
-        });
-
-        // --- EMPHASIS UNDERLINE ANIMATION ---
-        gsap.utils.toArray('.emphasis-underline svg path').forEach(path => {
-            gsap.to(path, {
-                strokeDashoffset: 0,
-                duration: 1.5,
-                ease: "power1.inOut",
-                scrollTrigger: {
-                    trigger: path.closest('.emphasis-underline'),
-                    start: "top 85%",
-                    once: true,
-                }
-            });
-        });
-
-
-    });
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        gsap.registerPlugin(ScrollTrigger);
-
-
-        // --- ANIMATION FOR URGENCY BOX EMPHASIS ---
-        gsap.to(".urgency-box .emphasis-underline svg circle", {
-            strokeDashoffset: 0,
-            duration: 1.5,
-            ease: "power2.inOut",
-            scrollTrigger: {
-                trigger: ".urgency-box",
-                start: "top 80%",
-                once: true
-            }
-        });
-
-    });
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        // --- UPDATED "Results Section" Animation ---
-        gsap.utils.toArray('.result-card').forEach(card => {
-            gsap.to(card, {
-                opacity: 1,
-                y: 0,
-                duration: 0.8,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 85%",
-                    once: true,
-                    // Animate the number counter when the card appears
-                    onEnter: () => {
-                        gsap.utils.toArray(card.querySelectorAll('.counter')).forEach(counter => {
-                            const target = parseFloat(counter.dataset.target);
-                            const prefix = counter.closest('.highlight-number').dataset.prefix || '';
-                            const suffix = counter.closest('.highlight-number').dataset.suffix || '';
-                            
-                            gsap.to(counter, {
-                                innerText: target,
-                                duration: 2,
-                                ease: 'power2.out',
-                                snap: { innerText: 0.1 }, // For decimal numbers
-                                onUpdate: function() {
-                                    counter.innerText = prefix + parseFloat(this.targets()[0].innerText).toFixed(1) + suffix;
-                                    if (target % 1 === 0) { // If it's a whole number, remove decimal
-                                       counter.innerText = prefix + parseInt(this.targets()[0].innerText) + suffix;
-                                    }
-                                }
-                            });
-                        });
-                    }
-                }
-            });
-        });
-        
-        // --- Animation for Emphasis Underlines ---
-        gsap.utils.toArray('.emphasis-underline svg path').forEach(path => {
-            gsap.to(path, {
-                strokeDashoffset: 0,
-                duration: 1.5,
-                ease: "power1.inOut",
-                scrollTrigger: {
-                    trigger: path.closest('.emphasis-underline'),
-                    start: "top 85%",
-                    once: true,
-                }
-            });
-        });
-
-     
-    });
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        gsap.registerPlugin(ScrollTrigger);
-
-
-        // --- ANIMATION FOR EMPHASIS UNDERLINES ---
-        gsap.utils.toArray('.emphasis-underline svg path').forEach(path => {
-            gsap.to(path, {
-                strokeDashoffset: 0, // Animate to "0" to draw the line
-                duration: 1.5,
-                ease: "power1.inOut",
-                scrollTrigger: {
-                    trigger: path,
-                    start: "top 85%", // Starts animation when the element is 85% in view
-                    once: true,
-                }
-            });
-        });
-  
-    });
-</script>
-<script>
-
-  document.addEventListener('DOMContentLoaded', () => {
-      gsap.registerPlugin(ScrollTrigger);
-
-      // --- Card Stacking Animation ---
-      let stackingAnimation;
-      
-      function setupStacking() {
-          // Clean up previous animations
-          if (stackingAnimation) {
-              stackingAnimation.forEach(st => st.kill());
-          }
-          gsap.set(".warning-card", { clearProps: "all" });
-
-          // ✅ REMOVED the screen width check to allow animation on mobile
-          const isMobile = window.innerWidth <= 992;
-          
-          const warningCards = gsap.utils.toArray(".warning-card");
-          
-          // On mobile, the cards just scroll normally over a shorter distance
-          const rightPanel = document.querySelector('.warning-signs-right');
-          if (isMobile) {
-              rightPanel.style.minHeight = 'auto';
-          } else {
-              rightPanel.style.minHeight = '250vh';
-          }
-              
-          stackingAnimation = warningCards.map((card, index) => {
-              const timeline = gsap.timeline({
-                  scrollTrigger: {
-                      trigger: ".warning-signs-right",
-                      start: () => `top+=${index * 70} top+=150`,
-                      // On mobile, the end trigger is much sooner
-                      end: isMobile ? `top+=${(index + 1) * 100}` : `bottom bottom-=${(warningCards.length - index) * 70}`,
-                      scrub: true,
-                  }
-              });
-              
-              timeline.to(card, {
-                  scale: () => 1 - (warningCards.length - index - 1) * 0.05,
-                  y: () => (warningCards.length - index - 1) * -15,
-              }, 0);
-              return timeline;
-          });
-      }
-      
-      setupStacking();
-      window.addEventListener('resize', gsap.debounce(setupStacking, 200));
-  });
-</script>
-
-<script>
-    // Consolidate all GSAP animations into a single, efficient script
-    document.addEventListener('DOMContentLoaded', () => {
-        gsap.registerPlugin(ScrollTrigger);
-
->>>>>>> ff5aad94146ec2685561d7ef2c90433a5ca775bb
         // --- 1. Navbar Scroll Effect ---
         const navbar = document.querySelector('.navbar');
         if (navbar) {
@@ -2523,7 +2282,6 @@
                 }
             });
         });
-<<<<<<< HEAD
     
         // --- 5. PROCESS SECTION ANIMATION ---
         const processTimeline = gsap.timeline({
@@ -2533,24 +2291,6 @@
                 end: "bottom 80%",
                 scrub: 1,
             }
-=======
-    });
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        gsap.registerPlugin(ScrollTrigger);
-const cursor = document.getElementById('custom-cursor');
-
-if (cursor && window.matchMedia('(hover: hover)').matches) {
-    const interactiveElements = document.querySelectorAll('a, button, .cta-button, .faq-question');
-
-    window.addEventListener('mousemove', (e) => {
-        gsap.to(cursor, {
-            duration: 0.2,
-            left: e.clientX,
-            top: e.clientY,
-            ease: "power2.out"
->>>>>>> ff5aad94146ec2685561d7ef2c90433a5ca775bb
         });
         processTimeline.to(".connecting-line::before", {
             height: "100%",
@@ -2641,17 +2381,6 @@ if (cursor && window.matchMedia('(hover: hover)').matches) {
         }
     
     });
-<<<<<<< HEAD
     </script>
-=======
-
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
-    });
-}
-    });
-</script>
->>>>>>> ff5aad94146ec2685561d7ef2c90433a5ca775bb
 </body>
 </html>
