@@ -1,18 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Serious People - Authority Branding for Healthcare Leaders</title>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Serious People | Engineer Your Patient Acquisition</title>
     <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#050B18', 
+                            card: '#0F172A',
+                            cyan: '#00BAE2',
+                            red: '#A8201A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
     /* ------------------- */
     /* --- GLOBAL STYLES & SETUP --- */
     /* ------------------- */
@@ -147,7 +164,7 @@
     }
     
     .navbar.scrolled {
-      top: 10px;
+      top: 40px;
       background: rgba(27, 38, 59, 0.9);
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     }
@@ -1010,7 +1027,7 @@
     }
   
     .navbar.scrolled {
-      top: 20px;
+      top: 60px;
     }
   
     .logo-main {
@@ -1033,12 +1050,10 @@
       flex-direction: column;
       gap: 8px;
       padding: 0.6rem 1rem;
-      top: 50px;
-      display:none;
+      top: 65px;
     }
     .navbar.scrolled {
-      top: 2px;
-      display: block;
+      top: 60px;
     }
   
     .logo {
@@ -1449,192 +1464,99 @@
         }
     }
 </style>
-<style>
-    /* Custom styles for the backdrop glass effect */
-    .glass-effect {
-        background: rgba(15, 23, 42, 0.6) !important; /* Semi-transparent midnight */
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .emphasis-underline svg {
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 12px;
-        stroke: #00BAE2; /* Brand Cyan */
-        fill: none;
-        pointer-events: none;
-    }
-</style>
+    <style>
+        body { background-color: #050B18; color: #ffffff; overflow-x: hidden; }
+        .glass-card { background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px); }
+        .cyan-glow { box-shadow: 0 0 20px rgba(0, 186, 226, 0.3); }
+        .text-gradient-cyan { background: linear-gradient(to right, #00BAE2, #00D1FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .process-line { position: absolute; left: 28px; top: 0; bottom: 0; width: 2px; background: rgba(0, 186, 226, 0.2); }
+        .process-line-inner { position: absolute; left: 0; top: 0; width: 100%; height: 0%; background: #00BAE2; }
+    </style>
 </head>
-<body>
-    <div id="custom-cursor"></div>
-  <div class="bg-red-800 text-brand-dark py-2 px-4 text-center text-[10px] md:text-xs tracking-widest uppercase font-bold">
-    <span>We work with a limited number of practices to ensure ethical, hands-on execution</span>
-  </div>
+<body class="antialiased">
 
-  <nav class="navbar">
-    <div class="logo">
-      <div class="logo-main">THE <span>SERIOUS</span> PEOPLE</div>
-      <div class="logo-sub">HealthCare Marketing Agency</div>
-    </div>
-    <a href="#booking" class="cta-button">Request Brand Diagnosis</a>
-    
-  </nav>
-
-  <section class="bg-slate-50 py-16 md:py-24 pt-8">
-  <div class="max-w-6xl mx-auto px-5 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
-
-    <!-- LEFT -->
-    <div class="order-2 lg:order-1">
-
-      <!-- Badge -->
-      <span class="inline-block mb-4 text-xs md:text-sm font-semibold
-                   text-blue-700 bg-blue-100 px-4 py-1 rounded-full">
-        Healthcare Authority Positioning
-      </span>
-
-      <!-- Headline -->
-      <h1 class="font-serif font-bold text-slate-900 leading-tight
-                 text-3xl sm:text-4xl md:text-5xl">
-        Your Clinical Expertise <br class="hidden sm:block">
-        Deserves
-        <span class="text-blue-700 block sm:inline">
-          Professional Authority
-        </span>
-      </h1>
-
-      <!-- Subtext -->
-      <p class="mt-5 text-base sm:text-lg text-slate-600 max-w-xl">
-        We help experienced doctors establish ethical, compliant authority
-        so patients, institutions, and media recognize real expertise —
-        without advertising, hype, or manipulation.
-      </p>
-
-      <!-- Bullets -->
-      <ul class="mt-7 space-y-3 text-slate-700 text-sm sm:text-base">
-        <li class="flex gap-3 items-start">
-          <span class="text-blue-600 font-bold mt-[1px]">✓</span>
-          Built exclusively for doctors & healthcare leaders
-        </li>
-        <li class="flex gap-3 items-start">
-          <span class="text-blue-600 font-bold mt-[1px]">✓</span>
-          No ads, no hype, no misleading claims
-        </li>
-        <li class="flex gap-3 items-start">
-          <span class="text-blue-600 font-bold mt-[1px]">✓</span>
-          Fully aligned with medical ethics & compliance
-        </li>
-      </ul>
-
-      <!-- CTA -->
-      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-        <a
-          href="#diagnosis"
-          class="w-full sm:w-auto inline-flex items-center justify-center
-                 px-8 py-4 rounded-xl bg-blue-700 text-white
-                 font-semibold text-base hover:bg-blue-800 transition"
-        >
-          Request Brand Diagnosis
-        </a>
-
-        <span class="text-xs sm:text-sm text-slate-500 text-center sm:text-left">
-          Not a sales call · Confidential review<br class="sm:hidden">
-          <span class="hidden sm:inline">·</span>
-          We review only 5 practices per week
-        </span>
-      </div>
+    <div class="bg-brand-cyan text-brand-dark py-2 px-4 text-center text-[10px] md:text-xs tracking-widest uppercase font-bold">
+        Ethical Authority Branding • Limited Intake: 3 Practices per Week
     </div>
 
-    <!-- RIGHT (Image) -->
-    <div class="order-1 lg:order-2">
-      <div class="bg-white rounded-2xl shadow-lg p-4 sm:p-6 border">
-        <img
-          src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg"
-          class="rounded-xl object-cover w-full h-[220px] sm:h-auto"
-          alt="Doctor authority branding"
-        />
-        <p class="mt-3 text-center text-xs sm:text-sm text-slate-500">
-          Ethical · Compliant · No patient manipulation
-        </p>
-      </div>
-    </div>
+    <nav class="sticky top-0 z-[100] border-b border-white/5 bg-brand-dark/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex flex-col">
+                <span class="font-serif font-bold text-xl tracking-tight leading-none">THE <span class="text-brand-cyan">SERIOUS</span> PEOPLE</span>
+                <span class="text-[9px] tracking-[0.2em] uppercase text-slate-400">HealthCare Marketing Agency</span>
+            </div>
+            <a href="#audit" class="bg-brand-cyan hover:bg-cyan-500 text-brand-dark px-6 py-2.5 rounded-full text-sm font-bold transition-all cyan-glow">
+                Request Diagnosis
+            </a>
+        </div>
+    </nav>
 
-  </div>
-</section>
-
-
-
- <section class="py-16  md:py-24 bg-brand-dark overflow-hidden hidden-cost-section">
-    <div class="container mx-auto px-4 md:px-6 max-w-7xl">
-        <div class="text-center max-w-3xl mx-auto mb-12 md:mb-20">
-            <h2 class="text-3xl md:text-5xl font-bold leading-tight text-white mb-6">
-                Why Clinical Excellence Alone Is
-                <span class="emphasis-underline relative inline-block"> 
-                    No Longer Enough
-                    <svg viewBox="0 0 500 30" preserveAspectRatio="none">
-                        <path d="M5 20C52.5 12.5 152.5 6.5 250 6.5C347.5 6.5 447.5 12.5 495 20" stroke-width="6" stroke-linecap="round"/>
-                    </svg>
-                </span>
-            </h2>
-            <p class="text-base md:text-lg text-slate-400 font-light leading-relaxed">
-                In today’s healthcare landscape, patients and institutions make decisions
-                based on perceived authority — not just credentials.
+<header class="relative pt-20 pb-20 md:pt-32 md:pb-40 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+        
+        <div class="space-y-6 md:space-y-8 text-center lg:text-left order-2 lg:order-1">
+            <span class="inline-block px-4 py-1 rounded-full bg-brand-cyan/10 text-brand-cyan text-[10px] md:text-xs font-bold uppercase tracking-widest">
+                Healthcare Authority Branding
+            </span>
+            
+            <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+                Your Medical Expertise Deserves 
+                <span class="text-gradient-cyan italic block md:inline">Professional Authority</span>
+            </h1>
+            
+            <p class="text-base md:text-xl text-slate-400 font-light max-w-xl mx-auto lg:mx-0">
+                We help experienced doctors build ethical, compliant, and credible personal brands that patients and institutions trust — without gimmicks.
             </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 items-center justify-center lg:justify-start pt-4">
+                <a href="#audit" class="w-full sm:w-auto bg-brand-cyan text-brand-dark px-8 md:px-10 py-4 md:py-5 rounded-full text-lg md:text-xl font-extrabold transition-all hover:scale-105 shadow-2xl shadow-brand-cyan/20">
+                    Request Brand Diagnosis
+                </a>
+                <div class="text-center sm:text-left">
+                    <p class="text-[10px] md:text-xs text-slate-500 uppercase tracking-widest font-bold">Not a sales call</p>
+                    <p class="text-[10px] md:text-xs text-slate-500 italic font-medium">We review only 3 practices/week</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative order-1 lg:order-2 px-8 sm:px-12 lg:px-0">
+            <div class="glass-card p-3 md:p-4 rounded-[2rem] md:rounded-[3rem] rotate-2 md:rotate-3 hover:rotate-0 transition-transform duration-700 shadow-2xl">
+                <img src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg" 
+                     class="rounded-[1.5rem] md:rounded-[2.5rem] grayscale hover:grayscale-0 transition-all duration-700 w-full object-cover aspect-square md:aspect-auto" 
+                     alt="Doctor Authority">
+            </div>
+            
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-cyan/5 blur-3xl rounded-full lg:hidden -z-10"></div>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            
-            <div class="glass-effect p-8 md:p-10 rounded-[2rem] flex flex-col text-left transition-all duration-300 hover:border-brand-cyan/40">
-                <h3 class="mb-6">
-                    <span class="emphasis-underline relative inline-block text-xl md:text-2xl font-bold text-brand-cyan uppercase tracking-tighter italic">
-                        Authority Perception Gap
-                        <svg viewBox="0 0 500 30" preserveAspectRatio="none">
-                            <path d="M5 20C52.5 12.5 152.5 6.5 250 6.5C347.5 6.5 447.5 12.5 495 20" stroke-width="6" stroke-linecap="round"/>
-                        </svg>
-                    </span>
-                </h3>
-                <p class="text-slate-300 leading-relaxed text-sm md:text-base">
-                    Patients cannot accurately judge clinical skill. They choose specialists who appear established, trusted, and credible online.
-                </p>
-            </div>
-            
-            <div class="glass-effect p-8 md:p-10 rounded-[2rem] flex flex-col text-left transition-all duration-300 hover:border-brand-cyan/40">
-                <h3 class="mb-6">
-                    <span class="emphasis-underline relative inline-block text-xl md:text-2xl font-bold text-brand-cyan uppercase tracking-tighter italic">
-                        Institutional Visibility Gap
-                        <svg viewBox="0 0 500 30" preserveAspectRatio="none">
-                            <path d="M5 20C52.5 12.5 152.5 6.5 250 6.5C347.5 6.5 447.5 12.5 495 20" stroke-width="6" stroke-linecap="round"/>
-                        </svg>
-                    </span>
-                </h3>
-                <p class="text-slate-300 leading-relaxed text-sm md:text-base">
-                    Hospitals, health brands, and collaborators engage doctors with a clear public profile and professional positioning.
-                </p>
-            </div>
-
-            <div class="glass-effect p-8 md:p-10 rounded-[2rem] flex flex-col text-left transition-all duration-300 hover:border-brand-cyan/40">
-                <h3 class="mb-6">
-                    <span class="emphasis-underline relative inline-block text-xl md:text-2xl font-bold text-brand-cyan uppercase tracking-tighter italic">
-                        Credibility Signaling Gap
-                        <svg viewBox="0 0 500 30" preserveAspectRatio="none">
-                            <path d="M5 20C52.5 12.5 152.5 6.5 250 6.5C347.5 6.5 447.5 12.5 495 20" stroke-width="6" stroke-linecap="round"/>
-                        </svg>
-                    </span>
-                </h3>
-                <p class="text-slate-300 leading-relaxed text-sm md:text-base">
-                    Journalists and conference organizers select experts who are easy to recognize, quote, and trust.
-                </p>
-            </div>
-            
-        </div>
     </div>
-</section>
+</header>
 
-<section class="section warning-signs-section relative">
+    <section class="py-24 bg-white/[0.02] border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">What Growth Actually Looks Like</h2>
+            <p class="text-slate-400 italic mb-20 font-light italic">Clinical excellence is the foundation, positioning is the catalyst.</p>
+            <div class="grid md:grid-cols-3 gap-12 mb-20">
+                <div class="space-y-2">
+                    <div class="text-6xl font-bold text-brand-cyan counter" data-target="340">0%</div>
+                    <p class="text-lg text-slate-300 font-medium leading-tight">Increase in patient inquiries</p>
+                    <p class="text-xs text-slate-500 uppercase">Fertility Center, Bangalore</p>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-6xl font-bold text-brand-cyan">₹<span class="counter" data-target="47">0</span>L</div>
+                    <p class="text-lg text-slate-300 font-medium leading-tight">Revenue growth first quarter</p>
+                    <p class="text-xs text-slate-500 uppercase">Orthopedic Practice, Mumbai</p>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-6xl font-bold text-brand-cyan counter" data-target="89">0</div>
+                    <p class="text-lg text-slate-300 font-medium leading-tight">New patients monthly (from 12)</p>
+                    <p class="text-xs text-slate-500 uppercase">Dental Clinic, Kerala</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <section class="section warning-signs-section relative">
     <div class="container relative">
         <div class="warning-signs-wrapper relative">
             <div class="warning-signs-left">
@@ -1646,11 +1568,11 @@
                     </span>
                 </h2>
                 <p class="section-subtitle">If these patterns feel familiar, it usually indicates an authority positioning gap — not a clinical one.</p>
-                <div class="sticky-cta" id="cta-sticky-mobile">
-                <h4>If These Patterns Feel Familiar</h4>
-                <p>It typically means your expertise is under-represented — not under-valued.</p>
-                <a href="#booking" class="cta-button">Request a Confidential Diagnosis</a>
-            </div>
+                <div class="sticky-cta" id="cta-sticky-pc">
+                    <h4>Checked 3 or More?</h4>
+                    <p>You're likely losing patients and revenue daily. It's time for a professional diagnosis.</p>
+                    <a href="#booking" class="cta-button">Book Your Free Brand Audit</a>
+                </div>
             </div>
             <div class="warning-signs-right" >
                 <div class="warning-card sticky top-24 h-full flex flex-col items-center justify-center">
@@ -1686,23 +1608,17 @@
                         <p>Colleagues with half your experience are getting more recognition, better opportunities, and building larger practices.</p>
                     </div>
                 </div>
-                <div class="warning-card p-8 md:p-10 rounded-[2rem] sticky top-48 group transition-all  flex flex-col items-center text-center">
-    <div class="text-4xl mb-6">⚠️</div>
-    <div class="warning-card-content">
-        <h3 class="text-xl md:text-2xl font-bold text-white leading-snug mb-4">
-            Your calendar isn’t 
-            <span class="relative inline-block text-brand-cyan">
-                consistently filled with ideal patients
-                <svg class="absolute -bottom-2 left-0 w-full h-[12px]" viewBox="0 0 500 30" preserveAspectRatio="none">
-                    <path d="M5 20C52.5 12.5 152.5 6.5 250 6.5C347.5 6.5 447.5 12.5 495 20" stroke="#00BAE2" stroke-width="6" stroke-linecap="round" fill="none"/>
-                </svg>
-            </span>
-        </h3>
-        <p class="text-slate-400 text-sm md:text-base leading-relaxed max-w-md mx-auto">
-            You have availability but struggle to fill your schedule with the quality patients you want to serve.
-        </p>
-    </div>
-</div>
+                <div class="warning-card sticky top-0 h-full flex flex-col items-center justify-center">
+                    <div class="warning-card-icon">⚠️</div>
+                    <div class="warning-card-content">
+                        <h3>Your calendar isn’t <span class="emphasis-underline">consistently filled with ideal patients
+                            <svg viewBox="0 0 500 30" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 20C52.5 12.5 152.5 6.5 250 6.5C347.5 6.5 447.5 12.5 495 20" stroke-width="4" stroke-linecap="round"/>
+                            </svg>
+                        </span></h3>
+                        <p>You have availability but struggle to fill your schedule with the quality patients you want to serve.</p>
+                    </div>
+                </div>
                 <div class="warning-card sticky top-0 h-full flex flex-col items-center justify-center">
                     <div class="warning-card-icon">⚠️</div>
                     <div class="warning-card-content">
@@ -1735,358 +1651,121 @@
     </div>
 </section>
 
-<section class="section results-section bg-slate-900 py-24">
-  <div class="container max-w-7xl mx-auto px-6">
+<section class="py-16 md:py-24 bg-white/[0.01]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 md:mb-16 text-white">
+            Built For Healthcare Professionals
+        </h2>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
+            
+            <div class="bg-white/5 border border-white/10 p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl text-center hover:bg-white/10 transition-all cursor-default group">
+                <span class="text-2xl md:text-3xl block mb-2 md:mb-3 group-hover:scale-110 transition-transform">🦴</span>
+                <span class="text-sm md:text-base font-semibold text-slate-300">Orthopedics</span>
+            </div>
 
-    <!-- SECTION HEADING -->
-    <h2 class="section-title text-center text-white">
-      What Changes
-      <span class="emphasis-underline relative inline-block">
-        When Authority Is Established
-        <svg viewBox="0 0 500 30" xmlns="http://www.w3.org/2000/svg"
-          class="absolute -bottom-3 left-[-5%] w-[110%] h-6 stroke-blue-500 stroke-[4] fill-none">
-          <path d="M5 20C52.5 12.5 152.5 6.5 250 6.5C347.5 6.5 447.5 12.5 495 20"
-            stroke-linecap="round" />
-        </svg>
-      </span>
-    </h2>
+            <div class="bg-white/5 border border-white/10 p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl text-center hover:bg-white/10 transition-all cursor-default group">
+                <span class="text-2xl md:text-3xl block mb-2 md:mb-3 group-hover:scale-110 transition-transform">👶</span>
+                <span class="text-sm md:text-base font-semibold text-slate-300">Fertility</span>
+            </div>
 
-    <p class="section-subtitle text-center text-slate-400 max-w-3xl mx-auto mt-4">
-      These are not marketing tricks. They are positioning shifts that change how
-      patients, institutions, and media perceive medical expertise.
-    </p>
+            <div class="bg-white/5 border border-white/10 p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl text-center hover:bg-white/10 transition-all cursor-default group">
+                <span class="text-2xl md:text-3xl block mb-2 md:mb-3 group-hover:scale-110 transition-transform">💆</span>
+                <span class="text-sm md:text-base font-semibold text-slate-300">Dermatology</span>
+            </div>
 
-    <!-- RESULTS GRID -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            <div class="bg-white/5 border border-white/10 p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl text-center hover:bg-white/10 transition-all cursor-default group">
+                <span class="text-2xl md:text-3xl block mb-2 md:mb-3 group-hover:scale-110 transition-transform">🦷</span>
+                <span class="text-sm md:text-base font-semibold text-slate-300">Dental</span>
+            </div>
 
-      <!-- CARD 1 -->
-      <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg flex flex-col gap-6">
+            <div class="bg-white/5 border border-white/10 p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl text-center hover:bg-white/10 transition-all cursor-default group">
+                <span class="text-2xl md:text-3xl block mb-2 md:mb-3 group-hover:scale-110 transition-transform">👁️</span>
+                <span class="text-sm md:text-base font-semibold text-slate-300">Ophthalmology</span>
+            </div>
 
-        <!-- Header -->
-        <div class="flex items-center gap-4">
-          <img
-            src="https://randomuser.me/api/portraits/women/68.jpg"
-            alt="Senior Dermatologist"
-            class="w-12 h-12 rounded-full border border-slate-200"
-          />
-          <div>
-            <p class="font-semibold text-slate-900 leading-tight">
-              Senior Dermatologist
-            </p>
-            <p class="text-sm text-slate-500">
-              Cosmetic & Clinical Practice
-            </p>
-          </div>
+            <div class="bg-white/5 border border-white/10 p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl text-center hover:bg-white/10 transition-all cursor-default group">
+                <span class="text-2xl md:text-3xl block mb-2 md:mb-3 group-hover:scale-110 transition-transform">🧘</span>
+                <span class="text-sm md:text-base font-semibold text-slate-300">Physiotherapy</span>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl text-center hover:bg-white/10 transition-all cursor-default group">
+                <span class="text-2xl md:text-3xl block mb-2 md:mb-3 group-hover:scale-110 transition-transform">🧠</span>
+                <span class="text-sm md:text-base font-semibold text-slate-300">Psychology</span>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl text-center hover:bg-white/10 transition-all cursor-default group">
+                <span class="text-2xl md:text-3xl block mb-2 md:mb-3 group-hover:scale-110 transition-transform">🌿</span>
+                <span class="text-sm md:text-base font-semibold text-slate-300">Ayurveda</span>
+            </div>
+
         </div>
-
-        <!-- Position Shift -->
-        <div class="border-t border-b border-slate-200 py-5">
-          <p class="text-xs uppercase tracking-wider text-slate-400 mb-2">
-            Position Shift
-          </p>
-          <p class="text-lg md:text-xl font-semibold text-slate-900 leading-snug">
-            From <span class="text-slate-400">Invisible</span>
-            <span class="mx-2 text-slate-400">→</span>
-            <span class="text-blue-600">Recognized Authority</span>
-          </p>
-        </div>
-
-        <!-- Outcomes -->
-        <ul class="space-y-2 text-sm text-slate-600">
-          <li class="flex gap-2">
-            <span class="text-blue-500 mt-[2px]">•</span>
-            Patients arrived already educated and trusting
-          </li>
-          <li class="flex gap-2">
-            <span class="text-blue-500 mt-[2px]">•</span>
-            Higher-value consultations became the norm
-          </li>
-          <li class="flex gap-2">
-            <span class="text-blue-500 mt-[2px]">•</span>
-            Invited for expert features in health media
-          </li>
-        </ul>
-      </div>
-
-      <!-- CARD 2 -->
-      <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg flex flex-col gap-6">
-
-        <div class="flex items-center gap-4">
-          <img
-            src="https://randomuser.me/api/portraits/men/76.jpg"
-            alt="Orthopedic Surgeon"
-            class="w-12 h-12 rounded-full border border-slate-200"
-          />
-          <div>
-            <p class="font-semibold text-slate-900 leading-tight">
-              Orthopedic Surgeon
-            </p>
-            <p class="text-sm text-slate-500">
-              Complex & Referral-Based Cases
-            </p>
-          </div>
-        </div>
-
-        <div class="border-t border-b border-slate-200 py-5">
-          <p class="text-xs uppercase tracking-wider text-slate-400 mb-2">
-            Position Shift
-          </p>
-          <p class="text-lg md:text-xl font-semibold text-slate-900 leading-snug">
-            From <span class="text-slate-400">Busy</span>
-            <span class="mx-2 text-slate-400">→</span>
-            <span class="text-blue-600">Preferred Specialist</span>
-          </p>
-        </div>
-
-        <ul class="space-y-2 text-sm text-slate-600">
-          <li class="flex gap-2">
-            <span class="text-blue-500 mt-[2px]">•</span>
-            Recognized as a referral authority
-          </li>
-          <li class="flex gap-2">
-            <span class="text-blue-500 mt-[2px]">•</span>
-            Hospital partnerships followed visibility
-          </li>
-          <li class="flex gap-2">
-            <span class="text-blue-500 mt-[2px]">•</span>
-            Calendar filled weeks in advance
-          </li>
-        </ul>
-      </div>
-
-      <!-- CARD 3 -->
-      <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg flex flex-col gap-6">
-
-        <div class="flex items-center gap-4">
-          <img
-            src="https://randomuser.me/api/portraits/women/78.jpg"
-            alt="Functional Medicine Physician"
-            class="w-12 h-12 rounded-full border border-slate-200"
-          />
-          <div>
-            <p class="font-semibold text-slate-900 leading-tight">
-              Functional Medicine Physician
-            </p>
-            <p class="text-sm text-slate-500">
-              Integrative & Preventive Care
-            </p>
-          </div>
-        </div>
-
-        <div class="border-t border-b border-slate-200 py-5">
-          <p class="text-xs uppercase tracking-wider text-slate-400 mb-2">
-            Position Shift
-          </p>
-          <p class="text-lg md:text-xl font-semibold text-slate-900 leading-snug">
-            From <span class="text-slate-400">Generalist</span>
-            <span class="mx-2 text-slate-400">→</span>
-            <span class="text-blue-600">Premium Authority</span>
-          </p>
-        </div>
-
-        <ul class="space-y-2 text-sm text-slate-600">
-          <li class="flex gap-2">
-            <span class="text-blue-500 mt-[2px]">•</span>
-            Concierge model launched confidently
-          </li>
-          <li class="flex gap-2">
-            <span class="text-blue-500 mt-[2px]">•</span>
-            Patients accepted premium pricing without friction
-          </li>
-          <li class="flex gap-2">
-            <span class="text-blue-500 mt-[2px]">•</span>
-            Waitlists replaced availability gaps
-          </li>
-        </ul>
-      </div>
-
     </div>
-
-    <!-- DISCLAIMER -->
-    <p class="text-xs text-slate-400 max-w-3xl mx-auto mt-14 leading-relaxed text-center">
-      Outcomes vary by specialty, geography, and practice model.
-      We do not promise medical, financial, or patient volume results.
-      Our work focuses on ethical authority positioning and long-term professional credibility.
-    </p>
-
-  </div>
 </section>
 
-
-
-<section class="bg-slate-900 py-20">
-  <div class="max-w-5xl mx-auto px-6">
-
-    <div class="bg-slate-800 rounded-2xl border border-slate-700 p-8 md:p-12
-                flex flex-col md:flex-row items-center gap-10">
-
-      <!-- LEFT: AVAILABILITY -->
-      <div class="flex flex-col items-center md:items-start text-center md:text-left gap-4 md:w-1/3">
-
-        <div class="flex items-center gap-3 text-slate-300">
-          <svg class="w-6 h-6 text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 22C6.48 22 2 17.52 2 12S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16zm-1-9V7h2v3.17l2.59 2.58-1.42 1.42L11 11z"/>
-          </svg>
-          <span class="text-sm font-medium">
-            Current Intake Status
-          </span>
+    <section class="py-24 max-w-5xl mx-auto px-6">
+        <div class="text-center mb-20">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">The 3-Phase <br><span class="text-brand-cyan italic">Authority Positioning Framework™</span></h2>
+            <p class="text-slate-400 font-light">A structured, ethics-aligned system designed for clinical leaders.</p>
         </div>
-
-        <div class="text-4xl font-serif font-bold text-white">
-          3 Openings
+        
+        <div class="relative pl-16 space-y-24">
+            <div class="process-line"><div class="process-line-inner"></div></div>
+            
+            <div class="relative group">
+                <div class="absolute -left-[54px] top-0 w-14 h-14 bg-brand-cyan text-brand-dark rounded-full flex items-center justify-center font-bold font-serif text-2xl z-10 border-4 border-brand-dark">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-brand-cyan">Strategic Assessment</h3>
+                    <p class="text-slate-400 leading-relaxed">We evaluate your current professional positioning—how patients, peers, and institutions perceive your expertise. We clarify authority gaps and regulatory potential.</p>
+                </div>
+            </div>
+            
+            <div class="relative group">
+                <div class="absolute -left-[54px] top-0 w-14 h-14 bg-brand-cyan text-brand-dark rounded-full flex items-center justify-center font-bold font-serif text-2xl z-10 border-4 border-brand-dark">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-brand-cyan">Authority Infrastructure</h3>
+                    <p class="text-slate-400 leading-relaxed">We design the professional assets (Web, Narrative, Content) that communicate trust and leadership without exaggeration or compliance risk.</p>
+                </div>
+            </div>
+            
+            <div class="relative group">
+                <div class="absolute -left-[54px] top-0 w-14 h-14 bg-brand-cyan text-brand-dark rounded-full flex items-center justify-center font-bold font-serif text-2xl z-10 border-4 border-brand-dark">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-brand-cyan">Controlled Visibility</h3>
+                    <p class="text-slate-400 leading-relaxed">We guide deliberate exposure—ensuring you are visible in the right contexts to the right audiences for the right reasons. Recognition over virality.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <p class="text-sm text-slate-400 max-w-xs">
-          We onboard a limited number of practices each quarter to maintain
-          depth, compliance, and quality.
-        </p>
-      </div>
+  <section class="py-12 md:py-16 px-4 md:px-6">
+    <div class="max-w-4xl mx-auto bg-brand-red rounded-[2rem] md:rounded-[3rem] p-8 md:p-20 text-center relative overflow-hidden shadow-2xl">
+        <div class="relative z-10 space-y-4 md:space-y-6">
+            <div class="flex items-center justify-center gap-2 md:gap-3">
+                <svg class="w-6 h-6 md:w-8 md:h-8 text-white animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"></path>
+                </svg>
+                <span class="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em]">Current Intake Status</span>
+            </div>
 
-      <!-- RIGHT: MESSAGE -->
-      <div class="flex-1 text-center md:text-left">
+            <h2 class="text-4xl md:text-7xl font-bold leading-tight">3 Openings</h2>
 
-        <h3 class="text-2xl md:text-3xl font-serif font-bold text-white mb-4 leading-tight">
-          We Work With Few Practices — By Design
-        </h3>
+            <p class="text-base md:text-lg opacity-80 max-w-xl mx-auto leading-relaxed">
+                Authority positioning requires strategical depth. We intentionally limit how many doctors we work with to ensure ethical execution.
+            </p>
 
-        <p class="text-slate-300 leading-relaxed max-w-2xl mb-6">
-          Authority positioning requires strategic depth, clinical sensitivity,
-          and regulatory awareness.  
-          For that reason, we intentionally limit how many doctors we work with
-          at any given time.
-        </p>
-
-        <p class="text-slate-400 leading-relaxed max-w-2xl mb-8">
-          If current availability fills, new practices are reviewed in the next
-          intake cycle. There is no obligation — only a professional assessment
-          of fit.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 items-center">
-          <a
-            href="#booking"
-            class="inline-flex items-center justify-center px-8 py-4
-                   rounded-xl bg-blue-600 text-white font-semibold
-                   hover:bg-blue-700 transition"
-          >
-            Request Availability Review
-          </a>
-
-          <span class="text-sm text-slate-400">
-            Not a sales call · No commitment required
-          </span>
+            <div class="pt-2 md:pt-0">
+                <a href="#audit" class="inline-block w-full sm:w-auto bg-white text-brand-red px-8 md:px-12 py-4 md:py-5 rounded-full text-lg font-extrabold hover:bg-slate-100 transition-all uppercase tracking-widest shadow-lg">
+                    Check Availability
+                </a>
+            </div>
         </div>
-
-      </div>
-
+        
+        <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent -z-0"></div>
     </div>
-
-  </div>
 </section>
 
-
-<section class="bg-black py-20">
-  <div class="max-w-6xl mx-auto px-5">
-
-    <!-- Heading -->
-    <h2 class="text-center text-white font-serif font-bold text-3xl md:text-4xl leading-tight">
-      Our 3-Phase
-      <span class="relative inline-block text-blue-400">
-        Authority Positioning Framework™
-        <span class="absolute -bottom-2 left-0 w-full h-[2px] bg-blue-500/60"></span>
-      </span>
-    </h2>
-
-    <p class="mt-6 text-center text-slate-400 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-      A structured, ethics-aligned system built specifically for physicians
-      seeking long-term professional authority — not short-term visibility tactics.
-    </p>
-
-    <!-- Steps -->
-    <div class="mt-14 space-y-8">
-
-      <!-- STEP 1 -->
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
-        <div class="flex items-start gap-4">
-          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
-            1
-          </div>
-          <div>
-            <h3 class="text-white font-serif text-xl md:text-2xl mb-2">
-              Strategic Assessment
-            </h3>
-            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-              We evaluate how patients, peers, institutions, and media currently
-              perceive your expertise — identifying authority gaps that limit growth.
-            </p>
-            <p class="text-slate-400 text-sm leading-relaxed mt-3">
-              This includes clinical positioning, regulatory considerations,
-              and long-term authority potential before anything is published.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- STEP 2 -->
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
-        <div class="flex items-start gap-4">
-          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
-            2
-          </div>
-          <div>
-            <h3 class="text-white font-serif text-xl md:text-2xl mb-2">
-              Authority Infrastructure
-            </h3>
-            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-              We design professional assets that signal trust, credibility,
-              and leadership — without exaggeration or compliance risk.
-            </p>
-            <p class="text-slate-400 text-sm leading-relaxed mt-3">
-              This may include your website structure, messaging,
-              informational content, and materials for institutions or media.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- STEP 3 -->
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
-        <div class="flex items-start gap-4">
-          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
-            3
-          </div>
-          <div>
-            <h3 class="text-white font-serif text-xl md:text-2xl mb-2">
-              Controlled Visibility & Recognition
-            </h3>
-            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-              We guide deliberate visibility — placing you in the right
-              professional contexts for the right reasons.
-            </p>
-            <p class="text-slate-400 text-sm leading-relaxed mt-3">
-              The objective is consistency and recognition over time —
-              not volume, virality, or aggressive promotion.
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Trust Note -->
-    <p class="mt-12 text-center text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">
-      This framework is advisory and positioning-focused.
-      We do not provide medical, financial, or patient-volume guarantees.
-      All work aligns with professional ethics, jurisdictional regulations,
-      and long-term credibility.
-    </p>
-
-  </div>
-</section>
-
-
-
-<section class="who-we-section bg-slate-900 py-20">
+    <section class="who-we-section bg-slate-900 py-20">
   <div class="max-w-5xl mx-auto px-6 text-center">
 
     <h2 class="section-title text-white">
@@ -2145,225 +1824,85 @@
   </div>
 </section>
 
-
-<section class="faq">
-<div class="container">
-  <h2 class="section-title">Your Questions, Answered</h2>
-  <div class="faq-container">
-    <div class="faq-item">
-      <div class="faq-question">
-        <span>"I'm too busy as a physician to focus on branding."</span>
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-answer">
-        <p>This is precisely why our system is effective. It's designed for busy physicians. We handle the entire process, from strategy to execution. Our clients typically spend less than two hours total during the initial phases.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">
-        <span>"I'm not comfortable with 'marketing' as a doctor."</span>
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-answer">
-        <p>We agree. This isn't "marketing" in the traditional sense. This is professional positioning—an ethical, compliant, and sophisticated method of showcasing your genuine expertise to the patients who need it most. Everything we do adheres to medical board and HIPAA regulations.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">
-        <span>"How is this different from a generic marketing agency?"</span>
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-answer">
-        <p>Generic agencies lack the nuanced understanding of medical ethics, board regulations, and patient psychology. We work exclusively with healthcare leaders. Our strategies have been honed over years, specifically for the challenges and opportunities within the medical field.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">
-        <span>"What kind of ROI can I realistically expect?"</span>
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-answer">
-        <p>While results vary, our clients typically see significant returns through higher-value patients, increased consultation fees, and new opportunities like partnerships and speaking engagements. The primary ROI is building a sustainable brand asset that attracts patients, rather than perpetually paying for ads.</p>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<footer class="footer" id="booking">
-    <div class="container">
-        <div class="footer-brand">
-            <h3>THE <span>SERIOUS</span> PEOPLE</h3>
-            <p>Still on the fence? Ask yourself: Where will your practice be 12 months from now if nothing changes? The doctors dominating your specialty didn't wait. They built their brands when they had the chance. This is yours.</p>
-            <a href="https://calendly.com/theseriouspeople/30min" target="_blank" class="cta-button">Book Your Complimentary Strategy Call</a>
+    <section class="py-24 bg-white/[0.01]">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Physician Concerns</h2>
+            <div class="space-y-4">
+                <details class="group glass-card rounded-2xl overflow-hidden" open>
+                    <summary class="flex justify-between items-center p-6 cursor-pointer font-bold hover:bg-white/5 list-none">
+                        "I'm too busy to focus on branding."
+                        <span class="text-brand-cyan text-xl group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <div class="p-6 pt-0 text-slate-400 leading-relaxed border-t border-white/5">
+                        This is precisely why our system is effective. We handle the entire process. Our clients typically spend less than two hours total during the initial phases.
+                    </div>
+                </details>
+                <details class="group glass-card rounded-2xl overflow-hidden">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer font-bold hover:bg-white/5 list-none">
+                        "I'm not comfortable with 'marketing' as a doctor."
+                        <span class="text-brand-cyan text-xl group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <div class="p-6 pt-0 text-slate-400 leading-relaxed border-t border-white/5">
+                        We agree. This is professional positioning—an ethical, compliant method of showcasing genuine expertise. Everything adheres to medical board and HIPAA regulations.
+                    </div>
+                </details>
+                <details class="group glass-card rounded-2xl overflow-hidden">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer font-bold hover:bg-white/5 list-none">
+                        "How is this different from generic agencies?"
+                        <span class="text-brand-cyan text-xl group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <div class="p-6 pt-0 text-slate-400 leading-relaxed border-t border-white/5">
+                        Generic agencies lack understanding of medical ethics and patient psychology. We work exclusively with healthcare leaders using strategies honed specifically for specialists.
+                    </div>
+                </details>
+            </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2024 The Serious People. All Rights Reserved.
-        </div>
-    </div>
-</footer>
+    </section>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
+    <section id="audit" class="py-32 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-12 relative z-10">
+            <h2 class="text-4xl md:text-7xl font-bold leading-tight uppercase font-serif italic">The doctors dominating your specialty didn't wait.</h2>
+            <p class="text-xl text-slate-400">Request your 30-minute Strategy Call. Custom roadmap showing exactly how to dominate your market.</p>
+            <a href="https://calendly.com/theseriouspeople/30min" class="inline-block bg-brand-cyan text-brand-dark px-16 py-6 rounded-full text-2xl font-extrabold transition-all cyan-glow hover:scale-105">Book Your Strategy Call</a>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center text-slate-500">
+        <p class="text-[10px] tracking-[0.4em] uppercase font-bold">&copy; 2024 THE SERIOUS PEOPLE • ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
         gsap.registerPlugin(ScrollTrigger);
-    
-        // --- 1. Navbar Scroll Effect ---
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            });
-        }
-    
-        // --- 2. Hero Section Entrance Animation ---
-        const heroTimeline = gsap.timeline({
-            defaults: { duration: 0.8, ease: "power2.out" }
-        });
-        heroTimeline
-            .from('.hero-headline', { opacity: 0, y: 30 })
-            .from('.hero-description', { opacity: 0, y: 20 }, "-=0.6")
-            .from('.hero-features li', { opacity: 0, y: 20, stagger: 0.15 }, "-=0.6")
-            .from('.cta-area', { opacity: 0, y: 20 }, "-=0.6")
-            .from('.hero-right .image-card', { opacity: 0, scale: 0.9 }, "-=1")
-            .from('.trust-strip', { opacity: 0, y: 20 }, "-=0.5");
-    
-        // --- 3. On-Scroll Pop-Up Animations for Cards (Cost & Result) ---
-        const cardsToAnimate = gsap.utils.toArray('.cost-card, .result-card');
-        cardsToAnimate.forEach(card => {
-            gsap.to(card, {
-                opacity: 1,
-                y: 0,
-                duration: 0.8,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 85%",
-                    once: true,
-                }
+
+        // Counter Animation
+        document.querySelectorAll('.counter').forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            gsap.fromTo(counter, { innerText: 0 }, {
+                innerText: target,
+                duration: 2,
+                snap: { innerText: 1 },
+                scrollTrigger: { trigger: counter, start: "top 90%" }
             });
         });
-    
-        // --- 4. FAQ Accordion Functionality ---
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                    }
-                });
-                if (!isActive) {
-                    item.classList.add('active');
-                } else {
-                    item.classList.remove('active');
-                }
-            });
-        });
-    
-        // --- 5. PROCESS SECTION ANIMATION ---
-        const processTimeline = gsap.timeline({
+
+        // Process Line Animation
+        gsap.to('.process-line-inner', {
+            height: '100%',
             scrollTrigger: {
-                trigger: ".process-section",
-                start: "top 40%",
-                end: "bottom 80%",
-                scrub: 1,
+                trigger: '.process-line',
+                start: 'top 70%',
+                end: 'bottom 70%',
+                scrub: true
             }
         });
-        processTimeline.to(".connecting-line::before", {
-            height: "100%",
-        }, 0);
-        gsap.utils.toArray('.process-step').forEach((step, index) => {
-            processTimeline.to(step, {
-                opacity: 1,
-                x: 0,
-                duration: 0.5,
-            }, index * 0.2);
-        });
-    
-        // --- 6. EMPHASIS UNDERLINE & CIRCLE ANIMATIONS ---
-        gsap.utils.toArray('.emphasis-underline svg path').forEach(path => {
-            gsap.to(path, {
-                strokeDashoffset: 0,
-                duration: 1.5,
-                ease: "power1.inOut",
-                scrollTrigger: {
-                    trigger: path.closest('.emphasis-underline'),
-                    start: "top 85%",
-                    once: true,
-                }
+
+        // Stagger Sections
+        gsap.utils.toArray('section').forEach(section => {
+            gsap.from(section, {
+                opacity: 0, y: 40, duration: 1,
+                scrollTrigger: { trigger: section, start: "top 85%" }
             });
         });
-        gsap.to(".urgency-box .emphasis-underline svg circle", {
-            strokeDashoffset: 0,
-            duration: 1.5,
-            ease: "power2.inOut",
-            scrollTrigger: {
-                trigger: ".urgency-box",
-                start: "top 80%",
-                once: true
-            }
-        });
-    
-        // --- 7. "Results Section" Number Counters ---
-        gsap.utils.toArray('.result-card').forEach(card => {
-            gsap.to(card, { 
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 85%",
-                    once: true,
-                    onEnter: () => {
-                        gsap.utils.toArray(card.querySelectorAll('.counter')).forEach(counter => {
-                            const target = parseFloat(counter.dataset.target);
-                            const prefix = counter.closest('.highlight-number').dataset.prefix || '';
-                            const suffix = counter.closest('.highlight-number').dataset.suffix || '';
-                            
-                            gsap.to(counter, {
-                                innerText: target,
-                                duration: 2,
-                                ease: 'power2.out',
-                                snap: { innerText: 0.1 },
-                                onUpdate: function() {
-                                    let val = parseFloat(this.targets()[0].innerText);
-                                    if (target % 1 === 0) {
-                                       counter.innerText = prefix + parseInt(val) + suffix;
-                                    } else {
-                                       counter.innerText = prefix + val.toFixed(1) + suffix;
-                                    }
-                                }
-                            });
-                        });
-                    }
-                }
-            });
-        });
-    
-        // --- 8. Card Stacking Animation ---
-        
-        // --- 9. Custom Cursor ---
-        const cursor = document.getElementById('custom-cursor');
-        if (cursor && window.matchMedia('(hover: hover)').matches) {
-            const interactiveElements = document.querySelectorAll('a, button, .cta-button, .faq-question');
-            window.addEventListener('mousemove', (e) => {
-                gsap.to(cursor, {
-                    duration: 0.2,
-                    left: e.clientX,
-                    top: e.clientY,
-                    ease: "power2.out"
-                });
-            });
-            interactiveElements.forEach(el => {
-                el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
-                el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
-            });
-        }
-    
-    });
     </script>
 </body>
 </html>
