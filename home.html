@@ -2122,6 +2122,34 @@ src="https://www.facebook.com/tr?id=883062454792366&ev=PageView&noscript=1"
     </div>
 </section>
 
+<section id="thank-you" class="hidden fixed inset-0 z-[200] bg-brand-dark flex items-center justify-center p-6 text-center">
+    <div class="max-w-2xl space-y-8">
+        <div class="flex justify-center">
+            <div class="w-24 h-24 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500 animate-pulse">
+                <svg class="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="space-y-4">
+            <h2 class="text-4xl md:text-6xl font-bold font-serif italic text-white leading-tight">
+                Booking Confirmed.
+            </h2>
+            <p class="text-xl text-slate-400 font-light">
+                Your roadmap to authority positioning is ready to be engineered. <br class="hidden md:block"> Check your email for meeting details and preparation steps.
+            </p>
+        </div>
+
+        <div class="pt-8">
+            <button onclick="window.location.reload()" class="text-blue-500 uppercase tracking-widest font-bold text-xs hover:text-white transition-colors">
+                ← Return to Website
+            </button>
+        </div>
+    </div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/5 blur-[120px] rounded-full -z-10"></div>
+</section>
+
     <footer class="py-12 border-t border-white/5 text-center text-slate-500">
         <p class="text-[10px] tracking-[0.4em] uppercase font-bold">&copy; 2024 THE SERIOUS PEOPLE • ALL RIGHTS RESERVED.</p>
     </footer>
@@ -2210,6 +2238,38 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Pixel Lead event tracked.');
         });
     });
+});
+
+window.addEventListener('message', function(e) {
+    // Check if the message is from Calendly and is an "event_scheduled" event
+    if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+        
+        // 1. Log event for debugging
+        console.log("Calendly Booking Successful");
+
+        // 2. Track Final Conversion for Meta Pixel
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'Schedule', {
+                content_name: 'Consultation Call Scheduled',
+                status: 'Confirmed'
+            });
+        }
+
+        // 3. Smooth GSAP Transition to Thank You Page
+        const thankYouSection = document.getElementById('thank-you');
+        
+        // Remove the hidden class first
+        thankYouSection.classList.remove('hidden');
+        
+        // Use GSAP to animate it in over everything else
+        gsap.fromTo(thankYouSection, 
+            { opacity: 0, scale: 1.1 }, 
+            { opacity: 1, scale: 1, duration: 0.8, ease: "power4.out" }
+        );
+
+        // Hide the rest of the body to prevent scrolling
+        document.body.style.overflow = 'hidden';
+    }
 });
 </script>
 </body>
